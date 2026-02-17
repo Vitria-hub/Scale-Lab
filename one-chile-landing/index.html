@@ -3,8 +3,8 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>One Chile — Lujo Accesible desde Portugal</title>
-  <meta name="description" content="Descubre por qué miles de mujeres están eligiendo el diseño portugués de One. Relojes + pulseras en elegantes boxes. Lujo Accesible en Chile." />
+  <title>One Chile — Lujo Racional Portugués</title>
+  <meta name="description" content="Por qué el Lujo Racional Portugués está desplazando a las marcas tradicionales en los sectores altos de Santiago. Relojes + joyería en elegantes Boxes." />
   <script src="https://cdn.tailwindcss.com"></script>
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
@@ -14,10 +14,9 @@
       theme: {
         extend: {
           colors: {
-            gold: { DEFAULT: '#C9A871', dark: '#B8956A', light: '#D4B98A' },
-            cream: { DEFAULT: '#F5F1E8', dark: '#E8E0D5', darker: '#D9CEBC' },
-            terra: { DEFAULT: '#C17B66', dark: '#A8624E', light: '#D49786' },
-            charcoal: { DEFAULT: '#2C2C2C', light: '#4A4A4A', muted: '#6B6B6B' },
+            gold: { DEFAULT: '#D4AF37', dark: '#B8960C', light: '#E2C05A' },
+            offwhite: { DEFAULT: '#FAFAFA', dark: '#F5F5F5' },
+            ink: { DEFAULT: '#111111', light: '#333333', muted: '#6B6B6B' },
           },
           fontFamily: {
             serif: ['"Crimson Pro"', 'Georgia', 'serif'],
@@ -30,7 +29,7 @@
   <style>
     *, *::before, *::after { box-sizing: border-box; }
     html { scroll-behavior: smooth; }
-    body { font-family: 'DM Sans', system-ui, sans-serif; color: #2C2C2C; overflow-x: hidden; }
+    body { font-family: 'DM Sans', system-ui, sans-serif; color: #111111; overflow-x: hidden; background-color: #FAFAFA; }
 
     /* Grain texture overlay */
     body::after {
@@ -39,7 +38,7 @@
       inset: 0;
       pointer-events: none;
       z-index: 9999;
-      opacity: 0.03;
+      opacity: 0.025;
       background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noise'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noise)'/%3E%3C/svg%3E");
       background-size: 200px 200px;
     }
@@ -59,35 +58,13 @@
     .reveal-delay-3 { transition-delay: 0.3s; }
     .reveal-delay-4 { transition-delay: 0.4s; }
 
-    /* Elegant underline animation */
-    .underline-anim {
-      background-image: linear-gradient(#C9A871, #C9A871);
-      background-size: 0% 2px;
-      background-position: left bottom;
-      background-repeat: no-repeat;
-      transition: background-size 0.4s ease;
-    }
-    .underline-anim:hover { background-size: 100% 2px; }
-
-    /* Custom scrollbar */
-    ::-webkit-scrollbar { width: 8px; }
-    ::-webkit-scrollbar-track { background: #F5F1E8; }
-    ::-webkit-scrollbar-thumb { background: #C9A871; border-radius: 4px; }
-    ::-webkit-scrollbar-thumb:hover { background: #B8956A; }
-
-    /* Hero parallax */
-    .hero-bg {
-      will-change: transform;
-      transition: transform 0.1s linear;
-    }
-
     /* Shimmer on gold elements */
     @keyframes shimmer {
       0% { background-position: -200% center; }
       100% { background-position: 200% center; }
     }
     .shimmer-gold {
-      background: linear-gradient(110deg, #C9A871 30%, #E0C99A 50%, #C9A871 70%);
+      background: linear-gradient(110deg, #D4AF37 30%, #F0D060 50%, #D4AF37 70%);
       background-size: 200% 100%;
       animation: shimmer 3s ease-in-out infinite;
       -webkit-background-clip: text;
@@ -101,22 +78,15 @@
     }
     .card-lift:hover {
       transform: translateY(-6px);
-      box-shadow: 0 20px 60px rgba(201, 168, 113, 0.15);
+      box-shadow: 0 20px 60px rgba(212, 175, 55, 0.12);
     }
 
     /* Pulse for popular badge */
     @keyframes pulse-soft {
-      0%, 100% { box-shadow: 0 0 0 0 rgba(201, 168, 113, 0.4); }
-      50% { box-shadow: 0 0 0 12px rgba(201, 168, 113, 0); }
+      0%, 100% { box-shadow: 0 0 0 0 rgba(212, 175, 55, 0.4); }
+      50% { box-shadow: 0 0 0 12px rgba(212, 175, 55, 0); }
     }
     .pulse-badge { animation: pulse-soft 2.5s ease-in-out infinite; }
-
-    /* Progress bar animation */
-    @keyframes progress-fill {
-      from { width: 0%; }
-      to { width: 80%; }
-    }
-    .progress-animated { animation: progress-fill 1.5s cubic-bezier(0.22, 1, 0.36, 1) forwards; }
 
     /* Bounce arrow */
     @keyframes float-arrow {
@@ -142,12 +112,12 @@
       content: '';
       flex: 1;
       height: 1px;
-      background: linear-gradient(90deg, transparent, #C9A871, transparent);
+      background: linear-gradient(90deg, transparent, #D4AF37, transparent);
     }
 
     /* Image styling */
     .img-placeholder {
-      background: linear-gradient(135deg, #E8E0D5 0%, #D9CEBC 100%);
+      background: linear-gradient(135deg, #EFEFEF 0%, #E0E0E0 100%);
       overflow: hidden;
       position: relative;
     }
@@ -157,42 +127,34 @@
       object-fit: cover;
       display: block;
     }
+
+    /* Hero parallax */
+    .hero-bg {
+      will-change: transform;
+      transition: transform 0.1s linear;
+    }
+
+    /* Custom scrollbar */
+    ::-webkit-scrollbar { width: 8px; }
+    ::-webkit-scrollbar-track { background: #F5F5F5; }
+    ::-webkit-scrollbar-thumb { background: #D4AF37; border-radius: 4px; }
+    ::-webkit-scrollbar-thumb:hover { background: #B8960C; }
+
+    /* Comparison table */
+    .spec-table tr:not(:last-child) td,
+    .spec-table tr:not(:last-child) th {
+      border-bottom: 1px solid #EEEEEE;
+    }
   </style>
 </head>
-<body class="bg-cream">
+<body>
 
-  <!-- ===== NAVIGATION ===== -->
-  <nav id="navbar" class="fixed top-0 left-0 right-0 z-50 transition-all duration-500">
-    <div class="max-w-7xl mx-auto px-6 py-4 flex items-center justify-between">
-      <a href="#" class="font-serif text-2xl md:text-3xl font-bold tracking-wider text-charcoal">
-        ONE<span class="text-gold">.</span>
-      </a>
-      <div class="hidden md:flex items-center gap-8 text-sm font-medium text-charcoal-light">
-        <a href="#razones" class="underline-anim py-1">Las 7 Razones</a>
-        <a href="#comparacion" class="underline-anim py-1">Comparativa</a>
-        <a href="#boxes" class="underline-anim py-1">Nuestras Boxes</a>
-        <a href="#boxes" class="ml-2 px-6 py-2.5 bg-charcoal text-cream text-xs uppercase tracking-widest rounded-full hover:bg-charcoal-light transition-colors">
-          Comprar
-        </a>
-      </div>
-      <button id="mobile-menu-btn" class="md:hidden w-10 h-10 flex flex-col items-center justify-center gap-1.5">
-        <span class="w-6 h-0.5 bg-charcoal transition-all duration-300" id="bar1"></span>
-        <span class="w-6 h-0.5 bg-charcoal transition-all duration-300" id="bar2"></span>
-        <span class="w-4 h-0.5 bg-charcoal transition-all duration-300 ml-auto" id="bar3"></span>
-      </button>
-    </div>
-    <!-- Mobile Menu -->
-    <div id="mobile-menu" class="md:hidden max-h-0 overflow-hidden transition-all duration-500 bg-cream/95 backdrop-blur-md">
-      <div class="px-6 py-6 flex flex-col gap-4 text-center">
-        <a href="#razones" class="text-lg font-medium text-charcoal py-2 mobile-link">Las 7 Razones</a>
-        <a href="#comparacion" class="text-lg font-medium text-charcoal py-2 mobile-link">Comparativa</a>
-        <a href="#boxes" class="text-lg font-medium text-charcoal py-2 mobile-link">Nuestras Boxes</a>
-        <a href="#boxes" class="mt-2 px-8 py-3 bg-charcoal text-cream text-sm uppercase tracking-widest rounded-full mobile-link">
-          Comprar Ahora
-        </a>
-      </div>
-    </div>
-  </nav>
+  <!-- ===== LOGO HEADER (sin navegación) ===== -->
+  <header class="py-8 text-center border-b border-gray-100 bg-offwhite/95 backdrop-blur-md sticky top-0 z-50">
+    <a href="#" class="inline-block font-serif text-3xl md:text-4xl font-bold tracking-[0.15em] text-ink">
+      ONE<span class="text-gold">.</span>
+    </a>
+  </header>
 
 
   <!-- ===== HERO SECTION ===== -->
@@ -202,170 +164,180 @@
       <img src="https://cdn.shopify.com/s/files/1/0925/6042/5327/files/BoxONEIconicGold_Silver5.jpg" alt="One Watch Box Iconic" loading="eager" />
     </div>
     <!-- Gradient overlay -->
-    <div class="absolute inset-0 bg-gradient-to-r from-cream/95 via-cream/80 to-cream/30 md:from-cream/90 md:via-cream/70 md:to-transparent"></div>
-    <div class="absolute bottom-0 left-0 right-0 h-32 bg-gradient-to-t from-cream to-transparent"></div>
+    <div class="absolute inset-0 bg-gradient-to-r from-offwhite/97 via-offwhite/85 to-offwhite/30 md:from-offwhite/92 md:via-offwhite/75 md:to-transparent"></div>
+    <div class="absolute bottom-0 left-0 right-0 h-32 bg-gradient-to-t from-offwhite to-transparent"></div>
 
-    <div class="relative z-10 max-w-7xl mx-auto px-6 pt-32 pb-20 md:pt-40 md:pb-32">
+    <div class="relative z-10 max-w-7xl mx-auto px-6 pt-16 pb-20 md:pt-24 md:pb-32">
       <div class="max-w-2xl">
-        <p class="reveal text-xs md:text-sm uppercase tracking-[0.3em] text-gold-dark font-medium mb-6">
-          Lujo Accesible &mdash; Desde Lisboa, Portugal
+        <p class="reveal text-[10px] md:text-xs uppercase tracking-[0.35em] text-gold-dark font-semibold mb-6">
+          Mercado de Lujo &amp; Tendencias &bull; Lisboa / Santiago
         </p>
-        <h1 class="reveal reveal-delay-1 font-serif text-3xl sm:text-4xl md:text-5xl lg:text-[3.4rem] leading-tight md:leading-[1.15] font-semibold text-charcoal mb-6">
-          7 Razones por las que miles de mujeres están cambiando las marcas de lujo tradicionales por el
-          <span class="shimmer-gold">diseño portugués</span> de One.
+        <h1 class="reveal reveal-delay-1 font-serif text-3xl sm:text-4xl md:text-5xl lg:text-[3.2rem] leading-tight md:leading-[1.15] font-semibold text-ink mb-6">
+          Por qué el &ldquo;Lujo Racional&rdquo; Portugués está desplazando a las marcas tradicionales en los
+          <span class="shimmer-gold">sectores altos de Santiago.</span>
         </h1>
-        <p class="reveal reveal-delay-2 text-base md:text-lg text-charcoal-muted leading-relaxed mb-10 max-w-xl">
-          Descubre por qué el <em class="font-serif font-semibold text-charcoal not-italic">&lsquo;Lujo Accesible&rsquo;</em> es la nueva tendencia inteligente en Chile.
+        <p class="reveal reveal-delay-2 text-base md:text-lg text-ink-muted leading-relaxed mb-10 max-w-xl">
+          Analizamos cómo la marca <em class="font-serif font-semibold text-ink not-italic">One</em> rompió el modelo de precios tradicional eliminando intermediarios y centrándose en el <em class="font-serif font-semibold text-ink not-italic">High&#8209;Grade Steel</em>, desafiando a los gigantes del retail.
         </p>
         <div class="reveal reveal-delay-3 flex flex-col sm:flex-row items-start sm:items-center gap-4">
           <a href="#razones"
-             class="group inline-flex items-center gap-3 px-8 py-4 bg-charcoal text-cream text-sm uppercase tracking-[0.2em] rounded-full hover:bg-charcoal-light transition-all duration-300 shadow-lg shadow-charcoal/10">
-            Leer más
+             class="group inline-flex items-center gap-3 px-8 py-4 bg-ink text-offwhite text-sm uppercase tracking-[0.2em] rounded-full hover:bg-ink-light transition-all duration-300 shadow-lg shadow-ink/10">
+            Leer el Análisis
             <svg class="w-4 h-4 float-arrow" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
               <path d="M19 14l-7 7m0 0l-7-7m7 7V3" />
             </svg>
           </a>
-          <span class="text-xs text-charcoal-muted tracking-wide">Envío gratis sobre $99.000</span>
+          <span class="text-xs text-ink-muted tracking-wide">Envío gratis sobre $99.000</span>
         </div>
       </div>
     </div>
 
     <!-- Scroll indicator -->
     <div class="absolute bottom-8 left-1/2 -translate-x-1/2 z-10 hidden md:flex flex-col items-center gap-2">
-      <span class="text-[10px] uppercase tracking-[0.3em] text-charcoal-muted">Scroll</span>
+      <span class="text-[10px] uppercase tracking-[0.3em] text-ink-muted">Scroll</span>
       <div class="w-px h-12 bg-gradient-to-b from-gold to-transparent"></div>
     </div>
   </section>
 
 
   <!-- ===== TRUST BAR ===== -->
-  <section class="bg-charcoal py-5">
-    <div class="max-w-7xl mx-auto px-6 flex flex-wrap items-center justify-center gap-6 md:gap-12 text-cream/70 text-xs uppercase tracking-[0.2em]">
+  <section class="bg-ink py-5">
+    <div class="max-w-7xl mx-auto px-6 flex flex-wrap items-center justify-center gap-6 md:gap-12 text-white/60 text-xs uppercase tracking-[0.2em]">
       <span class="reveal flex items-center gap-2">
         <svg class="w-4 h-4 text-gold" fill="currentColor" viewBox="0 0 20 20"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/></svg>
         +20 Años
       </span>
       <span class="reveal reveal-delay-1">Garantía 2 Años</span>
-      <span class="reveal reveal-delay-2">Tiendas en Chile</span>
+      <span class="reveal reveal-delay-2">Casa Costanera &amp; Alto Las Condes</span>
       <span class="reveal reveal-delay-3">Diseño Portugués</span>
       <span class="reveal reveal-delay-4">Pago 100% Seguro</span>
     </div>
   </section>
 
 
-  <!-- ===== COMPARISON TABLE ===== -->
+  <!-- ===== COMPARISON / ANÁLISIS DE ESPECIFICACIONES ===== -->
   <section id="comparacion" class="py-20 md:py-32 bg-white">
-    <div class="max-w-5xl mx-auto px-6">
-      <div class="text-center mb-16">
-        <p class="reveal text-xs uppercase tracking-[0.3em] text-gold-dark font-medium mb-4">Transparencia Total</p>
-        <h2 class="reveal reveal-delay-1 font-serif text-3xl md:text-5xl font-semibold text-charcoal mb-4">
-          La Tabla de la Verdad
+    <div class="max-w-4xl mx-auto px-6">
+      <div class="text-center mb-14">
+        <p class="reveal text-[10px] uppercase tracking-[0.35em] text-gold-dark font-semibold mb-4">Transparencia Total</p>
+        <h2 class="reveal reveal-delay-1 font-serif text-3xl md:text-5xl font-semibold text-ink mb-3">
+          Análisis de Especificaciones
         </h2>
-        <p class="reveal reveal-delay-2 font-serif text-xl md:text-2xl text-charcoal-muted italic">
-          One vs. Otros
+        <p class="reveal reveal-delay-2 font-serif text-xl md:text-2xl text-ink-muted italic">
+          ONE vs. Retail Tradicional
         </p>
       </div>
 
-      <div class="reveal grid grid-cols-1 md:grid-cols-2 gap-6 md:gap-8">
-        <!-- ONE Column -->
-        <div class="bg-cream rounded-2xl p-8 md:p-10 border-2 border-gold/30 relative overflow-hidden">
-          <div class="absolute top-0 right-0 bg-gold text-white text-[10px] uppercase tracking-widest px-4 py-1.5 rounded-bl-xl font-medium">
-            Nosotros
-          </div>
-          <h3 class="font-serif text-2xl md:text-3xl font-bold text-charcoal mb-8">ONE<span class="text-gold">.</span></h3>
-          <ul class="space-y-6">
-            <li class="flex items-start gap-4">
-              <span class="mt-0.5 w-6 h-6 rounded-full bg-gold/15 flex items-center justify-center flex-shrink-0">
-                <svg class="w-3.5 h-3.5 text-gold-dark" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24"><path d="M5 13l4 4L19 7"/></svg>
-              </span>
-              <div>
-                <p class="font-semibold text-charcoal">Diseño Europeo (Lisboa)</p>
-                <p class="text-sm text-charcoal-muted mt-0.5">Creado por diseñadores portugueses</p>
-              </div>
-            </li>
-            <li class="flex items-start gap-4">
-              <span class="mt-0.5 w-6 h-6 rounded-full bg-gold/15 flex items-center justify-center flex-shrink-0">
-                <svg class="w-3.5 h-3.5 text-gold-dark" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24"><path d="M5 13l4 4L19 7"/></svg>
-              </span>
-              <div>
-                <p class="font-semibold text-charcoal">Garantía de 2 Años + Ajuste Gratis</p>
-                <p class="text-sm text-charcoal-muted mt-0.5">Respaldo total en tu compra</p>
-              </div>
-            </li>
-            <li class="flex items-start gap-4">
-              <span class="mt-0.5 w-6 h-6 rounded-full bg-gold/15 flex items-center justify-center flex-shrink-0">
-                <svg class="w-3.5 h-3.5 text-gold-dark" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24"><path d="M5 13l4 4L19 7"/></svg>
-              </span>
-              <div>
-                <p class="font-semibold text-charcoal">Set Completo (Reloj + Joya) en &lsquo;Box&rsquo;</p>
-                <p class="text-sm text-charcoal-muted mt-0.5">Todo lo que necesitas en una caja</p>
-              </div>
-            </li>
-            <li class="flex items-start gap-4">
-              <span class="mt-0.5 w-6 h-6 rounded-full bg-gold/15 flex items-center justify-center flex-shrink-0">
-                <svg class="w-3.5 h-3.5 text-gold-dark" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24"><path d="M5 13l4 4L19 7"/></svg>
-              </span>
-              <div>
-                <p class="font-semibold text-charcoal">Precio: Lujo Accesible (Justo)</p>
-                <p class="text-sm text-charcoal-muted mt-0.5">Calidad premium, precio honesto</p>
-              </div>
-            </li>
-          </ul>
-        </div>
-
-        <!-- OTHERS Column -->
-        <div class="bg-gray-50 rounded-2xl p-8 md:p-10 border border-gray-200 relative opacity-80">
-          <h3 class="font-serif text-2xl md:text-3xl font-bold text-charcoal-muted mb-8">Otras Marcas</h3>
-          <ul class="space-y-6">
-            <li class="flex items-start gap-4">
-              <span class="mt-0.5 w-6 h-6 rounded-full bg-red-50 flex items-center justify-center flex-shrink-0">
-                <svg class="w-3.5 h-3.5 text-red-300" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24"><path d="M6 18L18 6M6 6l12 12"/></svg>
-              </span>
-              <div>
-                <p class="font-semibold text-charcoal-light">Diseños Genéricos o &lsquo;Mass Market&rsquo;</p>
-                <p class="text-sm text-charcoal-muted mt-0.5">Sin identidad propia</p>
-              </div>
-            </li>
-            <li class="flex items-start gap-4">
-              <span class="mt-0.5 w-6 h-6 rounded-full bg-red-50 flex items-center justify-center flex-shrink-0">
-                <svg class="w-3.5 h-3.5 text-red-300" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24"><path d="M6 18L18 6M6 6l12 12"/></svg>
-              </span>
-              <div>
-                <p class="font-semibold text-charcoal-light">Sin Garantía Extendida</p>
-                <p class="text-sm text-charcoal-muted mt-0.5">Compras sin respaldo</p>
-              </div>
-            </li>
-            <li class="flex items-start gap-4">
-              <span class="mt-0.5 w-6 h-6 rounded-full bg-red-50 flex items-center justify-center flex-shrink-0">
-                <svg class="w-3.5 h-3.5 text-red-300" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24"><path d="M6 18L18 6M6 6l12 12"/></svg>
-              </span>
-              <div>
-                <p class="font-semibold text-charcoal-light">Venta por Separado (Más Costoso)</p>
-                <p class="text-sm text-charcoal-muted mt-0.5">Gastas más pieza por pieza</p>
-              </div>
-            </li>
-            <li class="flex items-start gap-4">
-              <span class="mt-0.5 w-6 h-6 rounded-full bg-red-50 flex items-center justify-center flex-shrink-0">
-                <svg class="w-3.5 h-3.5 text-red-300" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24"><path d="M6 18L18 6M6 6l12 12"/></svg>
-              </span>
-              <div>
-                <p class="font-semibold text-charcoal-light">Precio: Inflado por la Etiqueta</p>
-                <p class="text-sm text-charcoal-muted mt-0.5">Pagas el nombre, no la calidad</p>
-              </div>
-            </li>
-          </ul>
-        </div>
+      <div class="reveal overflow-hidden rounded-2xl border border-gray-200 shadow-sm">
+        <table class="spec-table w-full text-sm md:text-base">
+          <thead>
+            <tr class="bg-ink text-white">
+              <th class="py-4 px-6 text-left font-sans font-semibold text-xs uppercase tracking-[0.2em] w-1/3">Característica</th>
+              <th class="py-4 px-6 text-left font-sans font-semibold text-xs uppercase tracking-[0.2em] w-1/3">
+                <span class="font-serif text-base normal-case tracking-normal text-gold font-bold">ONE<span class="text-white">.</span></span>
+                <span class="block text-[10px] text-white/50 tracking-[0.2em] uppercase font-sans mt-0.5">Lujo Accesible</span>
+              </th>
+              <th class="py-4 px-6 text-left font-sans font-semibold text-xs uppercase tracking-[0.2em] w-1/3 text-white/60">Marcas Tradicionales</th>
+            </tr>
+          </thead>
+          <tbody class="bg-white">
+            <tr>
+              <td class="py-5 px-6 text-ink-muted font-semibold text-xs uppercase tracking-widest">Material Base</td>
+              <td class="py-5 px-6">
+                <div class="flex items-start gap-2">
+                  <svg class="w-4 h-4 text-gold-dark flex-shrink-0 mt-0.5" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24"><path d="M5 13l4 4L19 7"/></svg>
+                  <div>
+                    <p class="font-semibold text-ink">Acero Inoxidable 316L</p>
+                    <p class="text-xs text-ink-muted mt-0.5">Grado Quirúrgico — Hipoalergénico</p>
+                  </div>
+                </div>
+              </td>
+              <td class="py-5 px-6">
+                <div class="flex items-start gap-2">
+                  <svg class="w-4 h-4 text-red-300 flex-shrink-0 mt-0.5" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24"><path d="M6 18L18 6M6 6l12 12"/></svg>
+                  <div>
+                    <p class="font-semibold text-ink-muted">Aleación de Latón / Zinc</p>
+                    <p class="text-xs text-ink-muted mt-0.5">Propenso a oxidación y manchas</p>
+                  </div>
+                </div>
+              </td>
+            </tr>
+            <tr class="bg-offwhite">
+              <td class="py-5 px-6 text-ink-muted font-semibold text-xs uppercase tracking-widest">Origen del Diseño</td>
+              <td class="py-5 px-6">
+                <div class="flex items-start gap-2">
+                  <svg class="w-4 h-4 text-gold-dark flex-shrink-0 mt-0.5" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24"><path d="M5 13l4 4L19 7"/></svg>
+                  <div>
+                    <p class="font-semibold text-ink">Atelier en Lisboa, Portugal</p>
+                    <p class="text-xs text-ink-muted mt-0.5">Identidad editorial europea</p>
+                  </div>
+                </div>
+              </td>
+              <td class="py-5 px-6">
+                <div class="flex items-start gap-2">
+                  <svg class="w-4 h-4 text-red-300 flex-shrink-0 mt-0.5" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24"><path d="M6 18L18 6M6 6l12 12"/></svg>
+                  <div>
+                    <p class="font-semibold text-ink-muted">Genérico / Mass Market Asiático</p>
+                    <p class="text-xs text-ink-muted mt-0.5">Sin identidad propia de diseño</p>
+                  </div>
+                </div>
+              </td>
+            </tr>
+            <tr>
+              <td class="py-5 px-6 text-ink-muted font-semibold text-xs uppercase tracking-widest">Propuesta de Valor</td>
+              <td class="py-5 px-6">
+                <div class="flex items-start gap-2">
+                  <svg class="w-4 h-4 text-gold-dark flex-shrink-0 mt-0.5" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24"><path d="M5 13l4 4L19 7"/></svg>
+                  <div>
+                    <p class="font-semibold text-ink">Set Completo &ldquo;Box&rdquo; (Reloj + Joya)</p>
+                    <p class="text-xs text-ink-muted mt-0.5">Ecosistema completo en un SKU</p>
+                  </div>
+                </div>
+              </td>
+              <td class="py-5 px-6">
+                <div class="flex items-start gap-2">
+                  <svg class="w-4 h-4 text-red-300 flex-shrink-0 mt-0.5" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24"><path d="M6 18L18 6M6 6l12 12"/></svg>
+                  <div>
+                    <p class="font-semibold text-ink-muted">Venta por pieza unitaria</p>
+                    <p class="text-xs text-ink-muted mt-0.5">Hasta 3× el costo total real</p>
+                  </div>
+                </div>
+              </td>
+            </tr>
+            <tr class="bg-offwhite">
+              <td class="py-5 px-6 text-ink-muted font-semibold text-xs uppercase tracking-widest">Garantía Real</td>
+              <td class="py-5 px-6">
+                <div class="flex items-start gap-2">
+                  <svg class="w-4 h-4 text-gold-dark flex-shrink-0 mt-0.5" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24"><path d="M5 13l4 4L19 7"/></svg>
+                  <div>
+                    <p class="font-semibold text-ink">2 Años + Soporte en Tienda Física</p>
+                    <p class="text-xs text-ink-muted mt-0.5">Casa Costanera &amp; Alto Las Condes</p>
+                  </div>
+                </div>
+              </td>
+              <td class="py-5 px-6">
+                <div class="flex items-start gap-2">
+                  <svg class="w-4 h-4 text-red-300 flex-shrink-0 mt-0.5" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24"><path d="M6 18L18 6M6 6l12 12"/></svg>
+                  <div>
+                    <p class="font-semibold text-ink-muted">Limitada / Solo Online</p>
+                    <p class="text-xs text-ink-muted mt-0.5">Sin respaldo físico real</p>
+                  </div>
+                </div>
+              </td>
+            </tr>
+          </tbody>
+        </table>
       </div>
     </div>
   </section>
 
 
   <!-- ===== 7 REASONS SECTION ===== -->
-  <section id="razones" class="py-20 md:py-32 bg-cream">
+  <section id="razones" class="py-20 md:py-32 bg-offwhite">
     <div class="max-w-6xl mx-auto px-6">
       <div class="text-center mb-20">
-        <p class="reveal text-xs uppercase tracking-[0.3em] text-gold-dark font-medium mb-4">El Manifiesto</p>
-        <h2 class="reveal reveal-delay-1 font-serif text-3xl md:text-5xl font-semibold text-charcoal">
+        <p class="reveal text-[10px] uppercase tracking-[0.35em] text-gold-dark font-semibold mb-4">El Análisis</p>
+        <h2 class="reveal reveal-delay-1 font-serif text-3xl md:text-5xl font-semibold text-ink">
           Las 7 Razones
         </h2>
       </div>
@@ -377,13 +349,13 @@
             <img src="https://cdn.shopify.com/s/files/1/0925/6042/5327/files/BoxONEIconicGold_Silver.jpg" alt="Box ONE Iconic - Reloj + Pulsera" loading="lazy" />
           </div>
           <div class="order-1 md:order-2">
-            <span class="inline-block text-xs uppercase tracking-[0.3em] text-gold-dark font-semibold mb-3">Razón #1</span>
-            <h3 class="font-serif text-2xl md:text-3xl font-semibold text-charcoal mb-2">
-              La Democratización del Lujo
+            <span class="inline-block text-[10px] uppercase tracking-[0.35em] text-gold-dark font-bold mb-3">Razón #1</span>
+            <h3 class="font-serif text-2xl md:text-3xl font-semibold text-ink mb-2">
+              Arbitraje de Valor
             </h3>
-            <p class="font-serif text-lg text-terra italic mb-5">Inversión Inteligente</p>
-            <p class="text-charcoal-muted leading-relaxed">
-              Olvídate de pagar de más solo por un nombre. One nació con una misión clara: <strong class="text-charcoal">Democratizar el lujo.</strong> Nuestras &lsquo;Boxes&rsquo; te entregan un look completo (Reloj + Pulsera) por una fracción del precio que pagarías comprando piezas por separado en marcas tradicionales. No es gastar, es invertir en tu imagen de forma inteligente.
+            <p class="font-serif text-lg text-ink-muted italic mb-5">La Matemática del Set</p>
+            <p class="text-ink-muted leading-relaxed">
+              Las marcas tradicionales multiplican el costo <strong class="text-ink">×8</strong> para cubrir campañas masivas y licencias de nombre. <em>One</em> opera diferente con sus &ldquo;Boxes&rdquo;. Al integrar reloj y joyería en un solo SKU de origen, eliminan ineficiencias logísticas. Matemáticamente, obtienes un set completo de diseño europeo por una fracción de lo que pagarías por un solo reloj de marca licenciada. <strong class="text-ink">Es una compra financiera inteligente.</strong>
             </p>
           </div>
         </div>
@@ -393,13 +365,13 @@
       <article class="reveal mb-20 md:mb-28">
         <div class="grid grid-cols-1 md:grid-cols-2 gap-8 md:gap-16 items-center">
           <div>
-            <span class="inline-block text-xs uppercase tracking-[0.3em] text-gold-dark font-semibold mb-3">Razón #2</span>
-            <h3 class="font-serif text-2xl md:text-3xl font-semibold text-charcoal mb-2">
-              Estilo &lsquo;Listo para Usar&rsquo;
+            <span class="inline-block text-[10px] uppercase tracking-[0.35em] text-gold-dark font-bold mb-3">Razón #2</span>
+            <h3 class="font-serif text-2xl md:text-3xl font-semibold text-ink mb-2">
+              El Protocolo &ldquo;Ready-to-Wear&rdquo;
             </h3>
-            <p class="font-serif text-lg text-terra italic mb-5">Sin Estrés</p>
-            <p class="text-charcoal-muted leading-relaxed">
-              Elimina la pregunta de cada mañana: <em>&laquo;¿Con qué combino esto?&raquo;</em> Cada Box ha sido curada por diseñadores expertos en Lisboa. El reloj y la joya nacieron para estar juntos. Es <strong class="text-charcoal">sofisticación instantánea</strong> sin complicaciones.
+            <p class="font-serif text-lg text-ink-muted italic mb-5">Eliminando la Fatiga de Decisión</p>
+            <p class="text-ink-muted leading-relaxed">
+              El error más común en el estilo diario es la falta de cohesión en los accesorios. Los diseñadores en Lisboa no crean piezas aisladas; curan ecosistemas. La &ldquo;Box&rdquo; elimina la pregunta <em>&laquo;¿con qué combino esto?&raquo;</em>. Es <strong class="text-ink">sofisticación instantánea</strong>, diseñada para funcionar en armonía visual desde el primer segundo.
             </p>
           </div>
           <div class="img-placeholder aspect-[4/3] rounded-2xl">
@@ -414,24 +386,24 @@
           <div class="order-2 md:order-1">
             <div class="grid grid-cols-3 gap-4">
               <div class="img-placeholder aspect-square rounded-full">
-                <img src="https://cdn.shopify.com/s/files/1/0925/6042/5327/files/RelojONEEmpireGold2.jpg" alt="Reloj One en oficina" loading="lazy" />
+                <img src="https://cdn.shopify.com/s/files/1/0925/6042/5327/files/RelojONEEmpireGold2.jpg" alt="Reloj One Empire Gold" loading="lazy" />
               </div>
               <div class="img-placeholder aspect-square rounded-full">
-                <img src="https://cdn.shopify.com/s/files/1/0925/6042/5327/files/Reloj_Adore_Gold.jpg" alt="Reloj One en evento" loading="lazy" />
+                <img src="https://cdn.shopify.com/s/files/1/0925/6042/5327/files/Reloj_Adore_Gold.jpg" alt="Reloj One Adore" loading="lazy" />
               </div>
               <div class="img-placeholder aspect-square rounded-full">
-                <img src="https://cdn.shopify.com/s/files/1/0925/6042/5327/files/RelojGraceGold.jpg" alt="Reloj One casual" loading="lazy" />
+                <img src="https://cdn.shopify.com/s/files/1/0925/6042/5327/files/RelojGraceGold.jpg" alt="Reloj One Grace" loading="lazy" />
               </div>
             </div>
           </div>
           <div class="order-1 md:order-2">
-            <span class="inline-block text-xs uppercase tracking-[0.3em] text-gold-dark font-semibold mb-3">Razón #3</span>
-            <h3 class="font-serif text-2xl md:text-3xl font-semibold text-charcoal mb-2">
-              Versatilidad 24/7
+            <span class="inline-block text-[10px] uppercase tracking-[0.35em] text-gold-dark font-bold mb-3">Razón #3</span>
+            <h3 class="font-serif text-2xl md:text-3xl font-semibold text-ink mb-2">
+              Ingeniería de Materiales
             </h3>
-            <p class="font-serif text-lg text-terra italic mb-5">De Zoom al Matrimonio</p>
-            <p class="text-charcoal-muted leading-relaxed">
-              Un diseño que acompaña etapas y momentos. La estética minimalista europea permite que tu One brille tanto en una reunión importante por Zoom como en un matrimonio de fin de semana. Es la pieza <strong class="text-charcoal">&lsquo;todo terreno&rsquo;</strong> que nunca desentona.
+            <p class="font-serif text-lg text-ink-muted italic mb-5">Acero 316L — Grado Quirúrgico</p>
+            <p class="text-ink-muted leading-relaxed">
+              Existe una diferencia crítica entre &ldquo;Bisutería&rdquo; y &ldquo;Joyería Técnica&rdquo;. Mientras el retail masivo usa aleaciones que reaccionan al pH de la piel —manchando de verde—, <em>One</em> utiliza exclusivamente <strong class="text-ink">Acero 316L y baños de alta micra</strong>. Son piezas inertes, hipoalergénicas y resistentes a la corrosión. Diseñadas para la vida real, no para guardarse.
             </p>
           </div>
         </div>
@@ -441,13 +413,13 @@
       <article class="reveal mb-20 md:mb-28">
         <div class="grid grid-cols-1 md:grid-cols-2 gap-8 md:gap-16 items-center">
           <div>
-            <span class="inline-block text-xs uppercase tracking-[0.3em] text-gold-dark font-semibold mb-3">Razón #4</span>
-            <h3 class="font-serif text-2xl md:text-3xl font-semibold text-charcoal mb-2">
-              Calidad que Empodera
+            <span class="inline-block text-[10px] uppercase tracking-[0.35em] text-gold-dark font-bold mb-3">Razón #4</span>
+            <h3 class="font-serif text-2xl md:text-3xl font-semibold text-ink mb-2">
+              Adaptabilidad Estética
             </h3>
-            <p class="font-serif text-lg text-terra italic mb-5">Hecho por Mujeres</p>
-            <p class="text-charcoal-muted leading-relaxed">
-              Inspirado en la fuerza femenina y diseñado por mujeres para mujeres. No es solo un accesorio, es una <strong class="text-charcoal">declaración de identidad.</strong> Materiales de alta gama que no se oxidan ni pierden color. La belleza de One está hecha para resistir tu ritmo de vida, no para guardarse en una caja.
+            <p class="font-serif text-lg text-ink-muted italic mb-5">Versatilidad — El Diseño Camaleónico</p>
+            <p class="text-ink-muted leading-relaxed">
+              El diseño minimalista portugués tiene una cualidad única: <strong class="text-ink">es camaleónico</strong>. Un reloj One tiene la sobriedad necesaria para una reunión de directorio y el brillo justo para un matrimonio de noche. Es la pieza &ldquo;Todo Terreno&rdquo; que optimiza tu colección personal sin esfuerzo adicional.
             </p>
           </div>
           <div class="img-placeholder aspect-[4/3] rounded-2xl">
@@ -460,16 +432,16 @@
       <article class="reveal mb-20 md:mb-28">
         <div class="grid grid-cols-1 md:grid-cols-2 gap-8 md:gap-16 items-center">
           <div class="img-placeholder aspect-[4/3] rounded-2xl order-2 md:order-1">
-            <img src="https://cdn.shopify.com/s/files/1/0925/6042/5327/files/OL9890SG52L.jpg" alt="Box Dazzle Gold - Eleva tu outfit" loading="lazy" />
+            <img src="https://cdn.shopify.com/s/files/1/0925/6042/5327/files/OL9890SG52L.jpg" alt="Box Dazzle Gold - Presencia Física" loading="lazy" />
           </div>
           <div class="order-1 md:order-2">
-            <span class="inline-block text-xs uppercase tracking-[0.3em] text-gold-dark font-semibold mb-3">Razón #5</span>
-            <h3 class="font-serif text-2xl md:text-3xl font-semibold text-charcoal mb-2">
-              Eleva tu Outfit en 30 Segundos
+            <span class="inline-block text-[10px] uppercase tracking-[0.35em] text-gold-dark font-bold mb-3">Razón #5</span>
+            <h3 class="font-serif text-2xl md:text-3xl font-semibold text-ink mb-2">
+              Validación Física Tangible
             </h3>
-            <p class="font-serif text-lg text-terra italic mb-5">El Toque Final</p>
-            <p class="text-charcoal-muted leading-relaxed">
-              ¿Tienes un look básico de jeans y polera? <strong class="text-charcoal">Transfórmalo en &lsquo;Chic&rsquo; al instante.</strong> El poder de los accesorios correctos es innegable. One es el toque final que comunica que cuidas los detalles, sin necesidad de esfuerzo extra.
+            <p class="font-serif text-lg text-ink-muted italic mb-5">Prueba Social Real</p>
+            <p class="text-ink-muted leading-relaxed">
+              Internet está lleno de marcas efímeras. <em>One</em> consolida su promesa con presencia física en los metros cuadrados más exigentes de Chile: <strong class="text-ink">Casa Costanera y Alto Las Condes</strong>. Esta presencia no es solo un punto de venta —es una garantía de solvencia y respaldo que las marcas puramente digitales no pueden ofrecer.
             </p>
           </div>
         </div>
@@ -479,21 +451,21 @@
       <article class="reveal mb-20 md:mb-28">
         <div class="grid grid-cols-1 md:grid-cols-2 gap-8 md:gap-16 items-center">
           <div>
-            <span class="inline-block text-xs uppercase tracking-[0.3em] text-gold-dark font-semibold mb-3">Razón #6</span>
-            <h3 class="font-serif text-2xl md:text-3xl font-semibold text-charcoal mb-2">
-              Respaldo Internacional y Presencia Local
+            <span class="inline-block text-[10px] uppercase tracking-[0.35em] text-gold-dark font-bold mb-3">Razón #6</span>
+            <h3 class="font-serif text-2xl md:text-3xl font-semibold text-ink mb-2">
+              Elevación de Estatus
             </h3>
-            <p class="font-serif text-lg text-terra italic mb-5">Confianza Real</p>
-            <p class="text-charcoal-muted leading-relaxed">
-              Líderes en Portugal con más de <strong class="text-charcoal">20 años de trayectoria.</strong> No somos una tienda virtual fantasma. En Chile, nos encuentras en los lugares más premium: <strong class="text-charcoal">Casa Costanera y Alto Las Condes.</strong> Compra online con la confianza de una marca física consolidada.
+            <p class="font-serif text-lg text-ink-muted italic mb-5">El Efecto Halo</p>
+            <p class="text-ink-muted leading-relaxed">
+              En psicología de la moda, los accesorios actúan como <strong class="text-ink">anclas de percepción</strong>. Un set de relojería bien ejecutado eleva la percepción de valor de prendas básicas —como unos jeans y una polera blanca— de forma instantánea. Es la herramienta de Personal Branding más eficiente en relación costo-beneficio.
             </p>
           </div>
           <div class="grid grid-cols-2 gap-4">
             <div class="img-placeholder aspect-[3/4] rounded-2xl">
-              <img src="https://cdn.shopify.com/s/files/1/0925/6042/5327/files/OL9231IC42T_7.jpg" alt="Tienda One Portugal" loading="lazy" />
+              <img src="https://cdn.shopify.com/s/files/1/0925/6042/5327/files/OL9231IC42T_7.jpg" alt="One Portugal" loading="lazy" />
             </div>
             <div class="img-placeholder aspect-[3/4] rounded-2xl">
-              <img src="https://cdn.shopify.com/s/files/1/0925/6042/5327/files/OL9781IC52L.jpg" alt="Tienda One Chile" loading="lazy" />
+              <img src="https://cdn.shopify.com/s/files/1/0925/6042/5327/files/OL9781IC52L.jpg" alt="One Chile" loading="lazy" />
             </div>
           </div>
         </div>
@@ -503,34 +475,33 @@
       <article class="reveal">
         <div class="grid grid-cols-1 md:grid-cols-2 gap-8 md:gap-16 items-center">
           <div class="flex flex-col sm:flex-row gap-6 order-2 md:order-1 justify-center">
-            <div class="bg-white rounded-2xl p-6 text-center shadow-sm border border-cream-dark flex-1 max-w-[200px] mx-auto sm:mx-0">
+            <div class="bg-white rounded-2xl p-6 text-center shadow-sm border border-gray-100 flex-1 max-w-[200px] mx-auto sm:mx-0">
               <div class="w-16 h-16 rounded-full bg-gold/10 flex items-center justify-center mx-auto mb-4">
                 <svg class="w-8 h-8 text-gold-dark" fill="none" stroke="currentColor" stroke-width="1.5" viewBox="0 0 24 24">
                   <path d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z" />
                 </svg>
               </div>
-              <p class="font-serif text-lg font-semibold text-charcoal">Garantía</p>
+              <p class="font-serif text-lg font-semibold text-ink">Garantía</p>
               <p class="text-2xl font-bold text-gold-dark mt-1">2 Años</p>
             </div>
-            <div class="bg-white rounded-2xl p-6 text-center shadow-sm border border-cream-dark flex-1 max-w-[200px] mx-auto sm:mx-0">
-              <div class="w-16 h-16 rounded-full bg-terra/10 flex items-center justify-center mx-auto mb-4">
-                <svg class="w-8 h-8 text-terra" fill="none" stroke="currentColor" stroke-width="1.5" viewBox="0 0 24 24">
-                  <path d="M11.42 15.17l-5.384-3.19A1 1 0 005 12.89v5.22a1 1 0 001.036.91l5.384-.319a1 1 0 00.964-.91v-1.71a1 1 0 00-.964-.91zM20 7l-8 5-8-5" />
-                  <path d="M21 12a9 9 0 11-18 0 9 9 0 0118 0z" />
+            <div class="bg-white rounded-2xl p-6 text-center shadow-sm border border-gray-100 flex-1 max-w-[200px] mx-auto sm:mx-0">
+              <div class="w-16 h-16 rounded-full bg-gold/10 flex items-center justify-center mx-auto mb-4">
+                <svg class="w-8 h-8 text-gold-dark" fill="none" stroke="currentColor" stroke-width="1.5" viewBox="0 0 24 24">
+                  <path stroke-linecap="round" stroke-linejoin="round" d="M13.5 21v-7.5a.75.75 0 01.75-.75h3a.75.75 0 01.75.75V21m-4.5 0H2.36m11.14 0H18m0 0h3.64m-1.39 0V9.349m-16.5 11.65V9.35m0 0a3.001 3.001 0 003.75-.615A2.993 2.993 0 009.75 9.75c.896 0 1.7-.393 2.25-1.016a2.993 2.993 0 002.25 1.016 2.993 2.993 0 002.25-1.016 3.001 3.001 0 003.75.614m-16.5 0a3.004 3.004 0 01-.621-4.72L4.318 3.44A1.5 1.5 0 015.378 3h13.243a1.5 1.5 0 011.06.44l1.19 1.189a3 3 0 01-.621 4.72m-13.5 8.65h3.75a.75.75 0 00.75-.75V13.5a.75.75 0 00-.75-.75H6.75a.75.75 0 00-.75.75v3.75c0 .415.336.75.75.75z" />
                 </svg>
               </div>
-              <p class="font-serif text-lg font-semibold text-charcoal">Ajuste</p>
-              <p class="text-2xl font-bold text-terra">Gratis</p>
+              <p class="font-serif text-lg font-semibold text-ink">Ajuste</p>
+              <p class="text-2xl font-bold text-gold-dark">Gratis</p>
             </div>
           </div>
           <div class="order-1 md:order-2">
-            <span class="inline-block text-xs uppercase tracking-[0.3em] text-gold-dark font-semibold mb-3">Razón #7</span>
-            <h3 class="font-serif text-2xl md:text-3xl font-semibold text-charcoal mb-2">
-              Compra Sin Riesgos
+            <span class="inline-block text-[10px] uppercase tracking-[0.35em] text-gold-dark font-bold mb-3">Razón #7</span>
+            <h3 class="font-serif text-2xl md:text-3xl font-semibold text-ink mb-2">
+              Garantía de Rendimiento
             </h3>
-            <p class="font-serif text-lg text-terra italic mb-5">Garantía Total</p>
-            <p class="text-charcoal-muted leading-relaxed">
-              Tu tranquilidad es nuestra prioridad. Ofrecemos <strong class="text-charcoal">2 años de garantía</strong> en todos nuestros relojes. ¿Te preocupa la talla? Ofrecemos <strong class="text-charcoal">ajuste de correas gratis</strong> en nuestras tiendas. Comprar lujo online nunca fue tan seguro.
+            <p class="font-serif text-lg text-ink-muted italic mb-5">Risk Reversal Total</p>
+            <p class="text-ink-muted leading-relaxed">
+              La confianza se demuestra con respaldo. Ofrecemos <strong class="text-ink">2 años de garantía técnica</strong> y, crucialmente, <strong class="text-ink">ajuste de correas gratuito</strong> en nuestras tiendas físicas. La relación no termina en el checkout; empieza ahí.
             </p>
           </div>
         </div>
@@ -540,24 +511,24 @@
 
 
   <!-- ===== VERDICT SECTION ===== -->
-  <section class="py-20 md:py-32 bg-charcoal text-cream relative overflow-hidden">
+  <section class="py-20 md:py-32 bg-ink text-white relative overflow-hidden">
     <div class="absolute inset-0 opacity-5">
       <div class="absolute top-1/4 -left-32 w-96 h-96 rounded-full border border-gold"></div>
       <div class="absolute bottom-1/4 -right-32 w-72 h-72 rounded-full border border-gold"></div>
     </div>
     <div class="relative max-w-4xl mx-auto px-6 text-center">
-      <p class="reveal text-xs uppercase tracking-[0.3em] text-gold font-medium mb-6">El Veredicto</p>
+      <p class="reveal text-[10px] uppercase tracking-[0.35em] text-gold font-semibold mb-6">El Veredicto</p>
       <blockquote class="reveal reveal-delay-1 font-serif text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-semibold leading-tight md:leading-snug mb-8">
-        &ldquo;La forma más inteligente de regalar
-        <span class="text-gold">(o auto-regalarse)</span>
-        lujo europeo.&rdquo;
+        &ldquo;La forma más inteligente de acceder al
+        <span class="text-gold">lujo europeo</span>
+        en Chile.&rdquo;
       </blockquote>
       <div class="reveal reveal-delay-2 w-24 h-px bg-gold mx-auto mb-8"></div>
-      <p class="reveal reveal-delay-3 text-cream/70 text-lg md:text-xl leading-relaxed max-w-2xl mx-auto mb-10">
-        Ya conoces por qué One es diferente. Ahora elige cómo quieres empezar tu colección.
+      <p class="reveal reveal-delay-3 text-white/60 text-lg md:text-xl leading-relaxed max-w-2xl mx-auto mb-10">
+        Ya conoces las razones. Ahora elige la configuración que se adapte a tu objetivo.
       </p>
-      <a href="#boxes" class="reveal reveal-delay-4 inline-flex items-center gap-3 px-10 py-4 bg-gold text-charcoal text-sm uppercase tracking-[0.2em] font-semibold rounded-full hover:bg-gold-light transition-colors shadow-lg shadow-gold/20">
-        Ver Colección
+      <a href="#boxes" class="reveal reveal-delay-4 inline-flex items-center gap-3 px-10 py-4 bg-gold text-ink text-sm uppercase tracking-[0.2em] font-bold rounded-full hover:bg-gold-light transition-colors shadow-lg shadow-gold/20">
+        Ver la Colección
         <svg class="w-4 h-4" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M17 8l4 4m0 0l-4 4m4-4H3"/></svg>
       </a>
     </div>
@@ -568,103 +539,103 @@
   <section id="boxes" class="py-20 md:py-32 bg-white">
     <div class="max-w-6xl mx-auto px-6">
       <div class="text-center mb-16">
-        <p class="reveal text-xs uppercase tracking-[0.3em] text-gold-dark font-medium mb-4">Tu Elección</p>
-        <h2 class="reveal reveal-delay-1 font-serif text-3xl md:text-5xl font-semibold text-charcoal mb-4">
-          Selecciona tu &lsquo;Box&rsquo; Perfecta
+        <p class="reveal text-[10px] uppercase tracking-[0.35em] text-gold-dark font-semibold mb-4">Tu Elección</p>
+        <h2 class="reveal reveal-delay-1 font-serif text-3xl md:text-5xl font-semibold text-ink mb-4">
+          La Colección Seleccionada
         </h2>
-        <p class="reveal reveal-delay-2 text-charcoal-muted max-w-lg mx-auto">
-          Cada Box incluye reloj + pulsera diseñados en armonía. Elige la opción que más se adapte a ti.
+        <p class="reveal reveal-delay-2 text-ink-muted max-w-lg mx-auto">
+          Elige la configuración que se adapte a tu objetivo.
         </p>
       </div>
 
       <div class="reveal grid grid-cols-1 md:grid-cols-3 gap-6 md:gap-8 items-start">
-        <!-- Card 1: Básica -->
-        <div class="card-lift bg-cream rounded-2xl p-8 text-center border border-cream-dark">
-          <p class="text-xs uppercase tracking-[0.3em] text-charcoal-muted font-medium mb-2">Básica</p>
-          <h3 class="font-serif text-2xl font-semibold text-charcoal mb-1">1 Box</h3>
-          <p class="text-sm text-charcoal-muted mb-6">Para Ti</p>
+        <!-- Card 1: THE STARTER -->
+        <div class="card-lift bg-offwhite rounded-2xl p-8 text-center border border-gray-200">
+          <p class="text-[10px] uppercase tracking-[0.35em] text-ink-muted font-semibold mb-1">The Starter</p>
+          <h3 class="font-serif text-2xl font-semibold text-ink mb-1">1 Box</h3>
+          <p class="text-sm text-ink-muted italic mb-6">Ideal para conocer la marca</p>
           <div class="img-placeholder aspect-square rounded-xl mb-6 max-w-[200px] mx-auto">
             <img src="https://cdn.shopify.com/s/files/1/0925/6042/5327/files/OL9781IC52L_1.jpg" alt="Box Desire - 1 Box" loading="lazy" />
           </div>
-          <ul class="text-sm text-charcoal-muted space-y-3 mb-8 text-left">
+          <ul class="text-sm text-ink-muted space-y-3 mb-8 text-left">
             <li class="flex items-center gap-2">
               <svg class="w-4 h-4 text-gold flex-shrink-0" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M5 13l4 4L19 7"/></svg>
-              Reloj + Pulsera
+              1× Box (Reloj + Joya)
             </li>
             <li class="flex items-center gap-2">
               <svg class="w-4 h-4 text-gold flex-shrink-0" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M5 13l4 4L19 7"/></svg>
-              Envío Gratis (sobre $99.000)
+              Envío Estándar
             </li>
             <li class="flex items-center gap-2">
               <svg class="w-4 h-4 text-gold flex-shrink-0" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M5 13l4 4L19 7"/></svg>
               Garantía 2 Años
             </li>
           </ul>
-          <a href="#" class="block w-full py-3.5 border-2 border-charcoal text-charcoal text-sm uppercase tracking-widest rounded-full font-medium hover:bg-charcoal hover:text-cream transition-colors">
-            Elegir Box
+          <a href="#" class="block w-full py-3.5 border-2 border-ink text-ink text-sm uppercase tracking-widest rounded-full font-medium hover:bg-ink hover:text-white transition-colors">
+            Comprar 1 Box
           </a>
         </div>
 
-        <!-- Card 2: Más Popular -->
-        <div class="card-lift bg-charcoal rounded-2xl p-8 text-center relative overflow-hidden md:-mt-4 md:mb-[-1rem] shadow-2xl shadow-charcoal/20">
-          <div class="pulse-badge absolute top-4 right-4 bg-gold text-charcoal text-[10px] uppercase tracking-widest px-3 py-1 rounded-full font-bold">
+        <!-- Card 2: THE GIFT SET -->
+        <div class="card-lift bg-ink rounded-2xl p-8 text-center relative overflow-hidden md:-mt-4 shadow-2xl shadow-ink/20">
+          <div class="pulse-badge absolute top-4 right-4 bg-gold text-ink text-[10px] uppercase tracking-widest px-3 py-1 rounded-full font-bold">
             Popular
           </div>
-          <p class="text-xs uppercase tracking-[0.3em] text-gold font-medium mb-2">Más Popular</p>
-          <h3 class="font-serif text-2xl font-semibold text-cream mb-1">2 Boxes</h3>
-          <p class="text-sm text-cream/60 mb-6">Regalo Perfecto</p>
-          <div class="img-placeholder aspect-square rounded-xl mb-6 max-w-[200px] mx-auto !bg-charcoal-light/30">
+          <p class="text-[10px] uppercase tracking-[0.35em] text-gold font-semibold mb-1">The Gift Set</p>
+          <h3 class="font-serif text-2xl font-semibold text-white mb-1">2 Boxes</h3>
+          <p class="text-sm text-white/50 italic mb-6">Una para ti, una para regalar</p>
+          <div class="img-placeholder aspect-square rounded-xl mb-6 max-w-[200px] mx-auto" style="background: rgba(255,255,255,0.08);">
             <img src="https://cdn.shopify.com/s/files/1/0925/6042/5327/files/OL9480BB41L_2.jpg" alt="Box Dazzle Bicolor - 2 Boxes" loading="lazy" />
           </div>
-          <div class="inline-block bg-terra/20 text-terra-light text-xs font-bold uppercase tracking-wider px-4 py-1.5 rounded-full mb-4">
-            10% OFF
+          <div class="inline-block bg-gold/20 text-gold text-xs font-bold uppercase tracking-wider px-4 py-1.5 rounded-full mb-4">
+            Ahorras 10%
           </div>
-          <ul class="text-sm text-cream/70 space-y-3 mb-8 text-left">
+          <ul class="text-sm text-white/60 space-y-3 mb-8 text-left">
             <li class="flex items-center gap-2">
               <svg class="w-4 h-4 text-gold flex-shrink-0" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M5 13l4 4L19 7"/></svg>
-              Una para ti, una para regalar
+              2× Boxes (Reloj + Joya c/u)
+            </li>
+            <li class="flex items-center gap-2">
+              <svg class="w-4 h-4 text-gold flex-shrink-0" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M5 13l4 4L19 7"/></svg>
+              Envío Prioritario Gratis
             </li>
             <li class="flex items-center gap-2">
               <svg class="w-4 h-4 text-gold flex-shrink-0" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M5 13l4 4L19 7"/></svg>
               Empaque de Regalo Premium
             </li>
-            <li class="flex items-center gap-2">
-              <svg class="w-4 h-4 text-gold flex-shrink-0" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M5 13l4 4L19 7"/></svg>
-              Envío Gratis + Garantía 2 Años
-            </li>
           </ul>
-          <a href="#" class="block w-full py-3.5 bg-gold text-charcoal text-sm uppercase tracking-widest rounded-full font-bold hover:bg-gold-light transition-colors">
-            Elegir 2 Boxes
+          <a href="#" class="block w-full py-3.5 bg-gold text-ink text-sm uppercase tracking-widest rounded-full font-bold hover:bg-gold-light transition-colors">
+            Comprar 2 Boxes
           </a>
         </div>
 
-        <!-- Card 3: Mejor Valor -->
-        <div class="card-lift bg-cream rounded-2xl p-8 text-center border border-cream-dark">
-          <p class="text-xs uppercase tracking-[0.3em] text-charcoal-muted font-medium mb-2">Mejor Valor</p>
-          <h3 class="font-serif text-2xl font-semibold text-charcoal mb-1">3 Boxes</h3>
-          <p class="text-sm text-charcoal-muted mb-6">Colección Completa</p>
+        <!-- Card 3: THE COLLECTOR -->
+        <div class="card-lift bg-offwhite rounded-2xl p-8 text-center border border-gray-200">
+          <p class="text-[10px] uppercase tracking-[0.35em] text-ink-muted font-semibold mb-1">The Collector</p>
+          <h3 class="font-serif text-2xl font-semibold text-ink mb-1">3 Boxes</h3>
+          <p class="text-sm text-ink-muted italic mb-6">Colección completa de estilos</p>
           <div class="img-placeholder aspect-square rounded-xl mb-6 max-w-[200px] mx-auto">
             <img src="https://cdn.shopify.com/s/files/1/0925/6042/5327/files/OL9231IC42T.jpg" alt="Box Elegance - Colección Completa" loading="lazy" />
           </div>
-          <div class="inline-block bg-gold/15 text-gold-dark text-xs font-bold uppercase tracking-wider px-4 py-1.5 rounded-full mb-4">
-            15% OFF
+          <div class="inline-block bg-gold/10 text-gold-dark text-xs font-bold uppercase tracking-wider px-4 py-1.5 rounded-full mb-4">
+            Ahorras 15%
           </div>
-          <ul class="text-sm text-charcoal-muted space-y-3 mb-8 text-left">
+          <ul class="text-sm text-ink-muted space-y-3 mb-8 text-left">
             <li class="flex items-center gap-2">
               <svg class="w-4 h-4 text-gold flex-shrink-0" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M5 13l4 4L19 7"/></svg>
-              Variedad de estilos
+              3× Boxes — Variedad de estilos
             </li>
             <li class="flex items-center gap-2">
               <svg class="w-4 h-4 text-gold flex-shrink-0" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M5 13l4 4L19 7"/></svg>
-              Joyero de Viaje Gratis
+              Joyero de Viaje (Regalo)
             </li>
             <li class="flex items-center gap-2">
               <svg class="w-4 h-4 text-gold flex-shrink-0" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M5 13l4 4L19 7"/></svg>
               Envío Express Prioritario
             </li>
           </ul>
-          <a href="#" class="block w-full py-3.5 border-2 border-charcoal text-charcoal text-sm uppercase tracking-widest rounded-full font-medium hover:bg-charcoal hover:text-cream transition-colors">
-            Elegir 3 Boxes
+          <a href="#" class="block w-full py-3.5 border-2 border-ink text-ink text-sm uppercase tracking-widest rounded-full font-medium hover:bg-ink hover:text-white transition-colors">
+            Comprar 3 Boxes
           </a>
         </div>
       </div>
@@ -672,91 +643,57 @@
   </section>
 
 
-  <!-- ===== CHECKOUT OPTIMIZATION ===== -->
-  <section class="py-12 md:py-16 bg-cream border-t border-cream-dark">
-    <div class="max-w-2xl mx-auto px-6">
-      <!-- Progress Bar -->
-      <div class="reveal bg-white rounded-2xl p-6 md:p-8 shadow-sm border border-cream-dark mb-6">
-        <div class="flex items-center justify-between mb-3">
-          <p class="text-sm font-semibold text-charcoal">Tu progreso de compra</p>
-          <span class="text-sm text-gold-dark font-bold">80%</span>
-        </div>
-        <div class="w-full h-2.5 bg-cream-dark rounded-full overflow-hidden mb-3">
-          <div class="progress-animated h-full bg-gradient-to-r from-gold-dark to-gold rounded-full"></div>
-        </div>
-        <p class="text-xs text-charcoal-muted">
-          Estás a <strong class="text-terra">$15.000</strong> de desbloquear un <strong class="text-charcoal">Regalo Sorpresa</strong>
-        </p>
-      </div>
-
-      <!-- Trust + Upsell -->
-      <div class="reveal reveal-delay-1 grid grid-cols-1 sm:grid-cols-2 gap-4">
-        <!-- Trust Badges -->
-        <div class="bg-white rounded-2xl p-6 shadow-sm border border-cream-dark flex items-center gap-4">
-          <div class="flex gap-3">
-            <div class="w-10 h-10 rounded-full bg-gold/10 flex items-center justify-center">
-              <svg class="w-5 h-5 text-gold-dark" fill="none" stroke="currentColor" stroke-width="1.5" viewBox="0 0 24 24">
-                <path d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z" />
-              </svg>
-            </div>
-            <div class="w-10 h-10 rounded-full bg-green-50 flex items-center justify-center">
-              <svg class="w-5 h-5 text-green-600" fill="none" stroke="currentColor" stroke-width="1.5" viewBox="0 0 24 24">
-                <path d="M12 15v2m-6 4h12a2 2 0 002-2v-6a2 2 0 00-2-2H6a2 2 0 00-2 2v6a2 2 0 002 2zm10-10V7a4 4 0 00-8 0v4h8z" />
-              </svg>
-            </div>
-          </div>
-          <div>
-            <p class="text-xs font-semibold text-charcoal">Garantía 2 Años</p>
-            <p class="text-xs text-charcoal-muted">Pago 100% Seguro</p>
-          </div>
-        </div>
-
-        <!-- Upsell Toggle -->
-        <div class="bg-white rounded-2xl p-6 shadow-sm border border-cream-dark flex items-center justify-between">
-          <div>
-            <p class="text-xs font-semibold text-charcoal">Agregar Empaque de Regalo</p>
-            <p class="text-xs text-charcoal-muted mt-0.5">Presentación premium</p>
-          </div>
-          <label class="relative inline-flex items-center cursor-pointer">
-            <input type="checkbox" class="sr-only peer" id="gift-toggle" />
-            <div class="w-11 h-6 bg-cream-dark rounded-full peer peer-checked:bg-gold transition-colors after:content-[''] after:absolute after:top-[2px] after:left-[2px] after:bg-white after:rounded-full after:h-5 after:w-5 after:transition-all peer-checked:after:translate-x-full after:shadow-sm"></div>
-          </label>
-        </div>
-      </div>
-    </div>
-  </section>
-
-
-  <!-- ===== BIG CTA ===== -->
-  <section class="py-16 md:py-20 bg-gradient-to-b from-cream to-cream-dark">
+  <!-- ===== GARANTÍA FINAL ===== -->
+  <section class="py-16 md:py-20 bg-offwhite-dark border-t border-gray-100">
     <div class="max-w-2xl mx-auto px-6 text-center">
-      <div class="reveal flourish text-charcoal-muted mb-8">
+      <div class="reveal flourish text-ink-muted mb-10">
         <svg class="w-5 h-5 text-gold flex-shrink-0" fill="currentColor" viewBox="0 0 20 20">
           <path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z" />
         </svg>
       </div>
-      <a href="#"
-         class="reveal inline-flex items-center gap-3 px-14 py-5 bg-charcoal text-cream text-sm md:text-base uppercase tracking-[0.25em] font-semibold rounded-full hover:bg-charcoal-light transition-all shadow-xl shadow-charcoal/15 hover:shadow-2xl hover:shadow-charcoal/20">
+      <blockquote class="reveal font-serif text-xl md:text-2xl text-ink leading-relaxed mb-8">
+        &ldquo;Respaldado por nuestra Garantía de 2 Años y presencia en Casa Costanera. Si no eleva tu estilo, lo devolvemos.&rdquo;
+      </blockquote>
+      <a href="#boxes"
+         class="reveal reveal-delay-1 inline-flex items-center gap-3 px-14 py-5 bg-ink text-white text-sm md:text-base uppercase tracking-[0.25em] font-semibold rounded-full hover:bg-ink-light transition-all shadow-xl shadow-ink/15 hover:shadow-2xl hover:shadow-ink/20">
         Comprar Ahora
         <svg class="w-5 h-5" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M17 8l4 4m0 0l-4 4m4-4H3"/></svg>
       </a>
-      <p class="reveal reveal-delay-1 text-xs text-charcoal-muted mt-6 tracking-wide">
+      <p class="reveal reveal-delay-2 text-xs text-ink-muted mt-6 tracking-wide">
         Envío gratis sobre $99.000 &bull; Pago seguro &bull; Garantía 2 años
       </p>
     </div>
   </section>
 
 
-
-
   <!-- ===== STICKY CTA (mobile) ===== -->
-  <div id="sticky-cta" class="sticky-cta fixed bottom-0 left-0 right-0 z-40 bg-white/95 backdrop-blur-md border-t border-cream-dark py-3 px-6 md:hidden">
+  <div id="sticky-cta" class="sticky-cta fixed bottom-0 left-0 right-0 z-40 bg-white/95 backdrop-blur-md border-t border-gray-100 py-3 px-6 md:hidden">
     <a href="#boxes"
-       class="flex items-center justify-center gap-2 w-full py-3.5 bg-charcoal text-cream text-sm uppercase tracking-[0.2em] font-semibold rounded-full shadow-lg">
+       class="flex items-center justify-center gap-2 w-full py-3.5 bg-ink text-white text-sm uppercase tracking-[0.2em] font-semibold rounded-full shadow-lg">
       Comprar Ahora
       <svg class="w-4 h-4" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M17 8l4 4m0 0l-4 4m4-4H3"/></svg>
     </a>
   </div>
+
+
+  <!-- ===== FOOTER LEGAL ===== -->
+  <footer class="bg-white border-t border-gray-100 py-8">
+    <div class="max-w-4xl mx-auto px-6 text-center">
+      <a href="#" class="inline-block font-serif text-xl font-bold tracking-[0.15em] text-ink mb-4">
+        ONE<span class="text-gold">.</span>
+      </a>
+      <div class="flex flex-wrap items-center justify-center gap-4 md:gap-6 text-[11px] text-ink-muted">
+        <a href="#" class="hover:text-ink transition-colors">Términos y Condiciones</a>
+        <span class="text-gray-200">|</span>
+        <a href="#" class="hover:text-ink transition-colors">Política de Privacidad</a>
+        <span class="text-gray-200">|</span>
+        <a href="#" class="hover:text-ink transition-colors">Política de Cambios y Devoluciones</a>
+      </div>
+      <p class="text-[11px] text-ink-muted mt-4">
+        &copy; 2025 One Chile. Todos los derechos reservados. Diseño: Atelier One, Lisboa.
+      </p>
+    </div>
+  </footer>
 
 
   <!-- ===== JAVASCRIPT ===== -->
@@ -772,19 +709,6 @@
       });
     }, { threshold: 0.15, rootMargin: '0px 0px -40px 0px' });
     revealElements.forEach(el => revealObserver.observe(el));
-
-    // === Navbar background on scroll ===
-    const navbar = document.getElementById('navbar');
-    const hero = document.getElementById('hero');
-    function updateNavbar() {
-      if (window.scrollY > 80) {
-        navbar.classList.add('bg-cream/95', 'backdrop-blur-md', 'shadow-sm');
-      } else {
-        navbar.classList.remove('bg-cream/95', 'backdrop-blur-md', 'shadow-sm');
-      }
-    }
-    window.addEventListener('scroll', updateNavbar, { passive: true });
-    updateNavbar();
 
     // === Sticky CTA visibility ===
     const stickyCta = document.getElementById('sticky-cta');
@@ -806,58 +730,6 @@
       }
     }
     window.addEventListener('scroll', updateParallax, { passive: true });
-
-    // === Mobile menu ===
-    const mobileMenuBtn = document.getElementById('mobile-menu-btn');
-    const mobileMenu = document.getElementById('mobile-menu');
-    const bar1 = document.getElementById('bar1');
-    const bar2 = document.getElementById('bar2');
-    const bar3 = document.getElementById('bar3');
-    let menuOpen = false;
-
-    mobileMenuBtn.addEventListener('click', () => {
-      menuOpen = !menuOpen;
-      if (menuOpen) {
-        mobileMenu.style.maxHeight = mobileMenu.scrollHeight + 'px';
-        bar1.style.transform = 'rotate(45deg) translate(4px, 4px)';
-        bar2.style.opacity = '0';
-        bar3.style.transform = 'rotate(-45deg) translate(2px, -2px)';
-        bar3.style.width = '1.5rem';
-      } else {
-        mobileMenu.style.maxHeight = '0';
-        bar1.style.transform = '';
-        bar2.style.opacity = '1';
-        bar3.style.transform = '';
-        bar3.style.width = '1rem';
-      }
-    });
-
-    // Close mobile menu on link click
-    document.querySelectorAll('.mobile-link').forEach(link => {
-      link.addEventListener('click', () => {
-        menuOpen = false;
-        mobileMenu.style.maxHeight = '0';
-        bar1.style.transform = '';
-        bar2.style.opacity = '1';
-        bar3.style.transform = '';
-        bar3.style.width = '1rem';
-      });
-    });
-
-    // === Progress bar re-trigger on visibility ===
-    const progressBar = document.querySelector('.progress-animated');
-    if (progressBar) {
-      const progressObserver = new IntersectionObserver((entries) => {
-        entries.forEach(entry => {
-          if (entry.isIntersecting) {
-            progressBar.style.animation = 'none';
-            progressBar.offsetHeight; // force reflow
-            progressBar.style.animation = '';
-          }
-        });
-      }, { threshold: 0.5 });
-      progressObserver.observe(progressBar);
-    }
   </script>
 </body>
 </html>
