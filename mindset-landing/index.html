@@ -1,0 +1,847 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Mindset — Muévete Cuando y Donde Quieras</title>
+  <meta name="description" content="7 razones por las que miles de mujeres en Chile eligen los packs Mindset para hacer deporte donde y cuando quieren. Pilates, funcional, yoga — sin horarios rígidos." />
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Fira+Sans:ital,wght@0,300;0,400;0,500;0,600;0,700;1,400&family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet" />
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: {
+            brand:   { DEFAULT: '#8AA4B2', dark: '#6B8E9F', light: '#AAC2CE' },
+            ink:     { DEFAULT: '#43494A', light: '#6B7475', muted: '#9CA8AA' },
+            sand:    { DEFAULT: '#FAFAFA', dark: '#F2F2F2' },
+            turq:    { DEFAULT: '#5BB5B0', dark: '#459B96', light: '#7DCAC6' },
+            salm:    { DEFAULT: '#F08080', dark: '#D96B6B', light: '#F5A0A0' },
+            save:    { DEFAULT: '#EE3B45' },
+          },
+          fontFamily: {
+            display: ['"Fira Sans"', 'system-ui', 'sans-serif'],
+            body:    ['"Poppins"', 'system-ui', 'sans-serif'],
+          },
+        },
+      },
+    };
+  </script>
+  <style>
+    *, *::before, *::after { box-sizing: border-box; }
+    html { scroll-behavior: smooth; }
+    body { font-family: 'Poppins', system-ui, sans-serif; color: #43494A; background: #FAFAFA; overflow-x: hidden; }
+
+    /* Scroll reveal */
+    .reveal {
+      opacity: 0;
+      transform: translateY(32px);
+      transition: opacity 0.7s cubic-bezier(0.22, 1, 0.36, 1), transform 0.7s cubic-bezier(0.22, 1, 0.36, 1);
+    }
+    .reveal.visible { opacity: 1; transform: translateY(0); }
+    .reveal-delay-1 { transition-delay: 0.1s; }
+    .reveal-delay-2 { transition-delay: 0.2s; }
+    .reveal-delay-3 { transition-delay: 0.3s; }
+    .reveal-delay-4 { transition-delay: 0.4s; }
+
+    /* Shimmer text */
+    @keyframes shimmer-turq {
+      0%   { background-position: -200% center; }
+      100% { background-position: 200% center; }
+    }
+    .shimmer-turq {
+      background: linear-gradient(110deg, #5BB5B0 30%, #AAD9D7 50%, #5BB5B0 70%);
+      background-size: 200% 100%;
+      animation: shimmer-turq 3s ease-in-out infinite;
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      background-clip: text;
+    }
+
+    /* Float arrow */
+    @keyframes float-arrow {
+      0%, 100% { transform: translateY(0); }
+      50%       { transform: translateY(8px); }
+    }
+    .float-arrow { animation: float-arrow 2s ease-in-out infinite; }
+
+    /* Card hover */
+    .card-lift {
+      transition: transform 0.4s cubic-bezier(0.22, 1, 0.36, 1), box-shadow 0.4s ease;
+    }
+    .card-lift:hover {
+      transform: translateY(-6px);
+      box-shadow: 0 20px 60px rgba(91, 181, 176, 0.15);
+    }
+
+    /* Popular badge pulse */
+    @keyframes pulse-soft {
+      0%, 100% { box-shadow: 0 0 0 0 rgba(91,181,176,0.4); }
+      50%       { box-shadow: 0 0 0 10px rgba(91,181,176,0); }
+    }
+    .pulse-badge { animation: pulse-soft 2.5s ease-in-out infinite; }
+
+    /* Sticky CTA */
+    .sticky-cta {
+      transform: translateY(100%);
+      transition: transform 0.5s cubic-bezier(0.22, 1, 0.36, 1);
+    }
+    .sticky-cta.show { transform: translateY(0); }
+
+    /* Flourish divider */
+    .flourish {
+      display: flex;
+      align-items: center;
+      gap: 14px;
+    }
+    .flourish::before, .flourish::after {
+      content: '';
+      flex: 1;
+      height: 1.5px;
+      background: linear-gradient(90deg, transparent, #8AA4B2, transparent);
+    }
+
+    /* Product placeholder */
+    .img-box {
+      background: linear-gradient(135deg, #E8EFF2 0%, #D4DFE4 100%);
+      overflow: hidden;
+      position: relative;
+    }
+    .img-box img { width: 100%; height: 100%; object-fit: cover; display: block; }
+
+    /* Table spec */
+    .spec-table td, .spec-table th { vertical-align: top; }
+    .spec-table tr:not(:last-child) td { border-bottom: 1px solid #EEEEEE; }
+
+    /* Color dots */
+    .dot { width: 16px; height: 16px; border-radius: 50%; display: inline-block; border: 1.5px solid rgba(0,0,0,0.08); }
+
+    /* Custom scrollbar */
+    ::-webkit-scrollbar { width: 6px; }
+    ::-webkit-scrollbar-track { background: #F2F2F2; }
+    ::-webkit-scrollbar-thumb { background: #8AA4B2; border-radius: 4px; }
+    ::-webkit-scrollbar-thumb:hover { background: #6B8E9F; }
+
+    /* Reason number */
+    .reason-num {
+      font-family: 'Fira Sans', sans-serif;
+      font-size: 3.5rem;
+      font-weight: 700;
+      line-height: 1;
+      color: #E8EFF2;
+    }
+  </style>
+</head>
+<body>
+
+  <!-- ===== HEADER (logo solo, sin nav) ===== -->
+  <header class="py-6 text-center border-b border-gray-100 bg-white/95 backdrop-blur-md sticky top-0 z-50">
+    <a href="#" class="inline-block font-display text-2xl md:text-3xl font-bold tracking-[0.12em] text-ink uppercase">
+      mind<span class="text-turq">set</span>
+    </a>
+  </header>
+
+
+  <!-- ===== HERO ===== -->
+  <section class="relative min-h-[90vh] flex items-center bg-white overflow-hidden">
+    <!-- Decorative background blobs -->
+    <div class="absolute top-0 right-0 w-[500px] h-[500px] rounded-full opacity-10" style="background: radial-gradient(circle, #5BB5B0, transparent 70%); transform: translate(30%, -30%);"></div>
+    <div class="absolute bottom-0 left-0 w-[400px] h-[400px] rounded-full opacity-8" style="background: radial-gradient(circle, #F08080, transparent 70%); transform: translate(-30%, 30%);"></div>
+
+    <div class="relative z-10 max-w-7xl mx-auto px-6 py-20 md:py-32">
+      <div class="max-w-3xl">
+        <p class="reveal text-[10px] md:text-xs uppercase tracking-[0.4em] text-brand font-semibold mb-5">
+          Bienestar &amp; Fitness &bull; Hecho para Ti
+        </p>
+        <h1 class="reveal reveal-delay-1 font-display text-3xl sm:text-4xl md:text-5xl lg:text-[3rem] leading-tight font-bold text-ink mb-6">
+          7 Razones por las que miles de mujeres eligen los packs <span class="shimmer-turq">Mindset</span> para hacer deporte donde y cuando quieren.
+        </h1>
+        <p class="reveal reveal-delay-2 text-base md:text-lg text-ink-light leading-relaxed mb-10 max-w-2xl font-light">
+          Analizamos por qué los packs de implementos deportivos Mindset están reemplazando a los equipos genéricos — y cómo cualquier mujer puede comenzar <strong class="font-semibold text-ink">hoy, en casa, sin horarios rígidos.</strong>
+        </p>
+        <div class="reveal reveal-delay-3 flex flex-col sm:flex-row items-start sm:items-center gap-4">
+          <a href="#razones"
+             class="inline-flex items-center gap-3 px-8 py-4 bg-ink text-white text-sm uppercase tracking-[0.2em] font-semibold rounded-full hover:bg-ink-light transition-all duration-300 shadow-lg shadow-ink/10">
+            Leer el Artículo
+            <svg class="w-4 h-4 float-arrow" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+              <path d="M19 14l-7 7m0 0l-7-7m7 7V3" />
+            </svg>
+          </a>
+          <span class="text-xs text-ink-muted font-light">Envío gratis RM en compras sobre $54.490</span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+
+  <!-- ===== TRUST BAR ===== -->
+  <section class="bg-ink py-4">
+    <div class="max-w-7xl mx-auto px-6 flex flex-wrap items-center justify-center gap-5 md:gap-10 text-white/60 text-[11px] uppercase tracking-[0.2em] font-light">
+      <span class="reveal flex items-center gap-2">
+        <svg class="w-3.5 h-3.5 text-turq" fill="currentColor" viewBox="0 0 20 20"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/></svg>
+        Miles de clientas
+      </span>
+      <span class="reveal reveal-delay-1">Garantía 3 Meses</span>
+      <span class="reveal reveal-delay-2">30 días de prueba</span>
+      <span class="reveal reveal-delay-3">Clases online gratis</span>
+      <span class="reveal reveal-delay-4">Pago en 6 cuotas sin interés</span>
+    </div>
+  </section>
+
+
+  <!-- ===== COMPARATIVA ===== -->
+  <section id="comparativa" class="py-20 md:py-28 bg-white">
+    <div class="max-w-4xl mx-auto px-6">
+      <div class="text-center mb-12">
+        <p class="reveal text-[10px] uppercase tracking-[0.4em] text-turq font-semibold mb-3">Sin letra chica</p>
+        <h2 class="reveal reveal-delay-1 font-display text-2xl md:text-4xl font-bold text-ink mb-3">
+          Mindset vs. La Competencia
+        </h2>
+        <p class="reveal reveal-delay-2 text-ink-muted text-base font-light">
+          Así se ve la diferencia cuando el diseño importa.
+        </p>
+      </div>
+
+      <div class="reveal overflow-hidden rounded-2xl border border-gray-200 shadow-sm">
+        <table class="spec-table w-full text-sm">
+          <thead>
+            <tr class="bg-ink text-white">
+              <th class="py-4 px-5 text-left font-body font-semibold text-[10px] uppercase tracking-[0.2em] w-[30%]">Característica</th>
+              <th class="py-4 px-5 text-left font-body font-semibold text-[10px] uppercase tracking-[0.2em] w-[35%]">
+                <span class="font-display text-sm normal-case tracking-wider text-turq font-bold">MINDSET</span>
+                <span class="block text-[9px] text-white/40 tracking-[0.2em] uppercase font-body mt-0.5">Packs Deportivos</span>
+              </th>
+              <th class="py-4 px-5 text-left font-body font-semibold text-[10px] uppercase tracking-[0.2em] w-[35%] text-white/50">Genéricos / Retail</th>
+            </tr>
+          </thead>
+          <tbody class="bg-white divide-y divide-gray-100">
+            <tr>
+              <td class="py-4 px-5 text-ink-muted font-semibold text-[10px] uppercase tracking-widest">Diseño</td>
+              <td class="py-4 px-5">
+                <div class="flex items-start gap-2">
+                  <svg class="w-4 h-4 text-turq flex-shrink-0 mt-0.5" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24"><path d="M5 13l4 4L19 7"/></svg>
+                  <div>
+                    <p class="font-semibold text-ink">Colorido, premium y con identidad</p>
+                    <p class="text-[11px] text-ink-muted mt-0.5">Colores únicos — Granito, Turquesa, Lavanda, Bruma</p>
+                  </div>
+                </div>
+              </td>
+              <td class="py-4 px-5">
+                <div class="flex items-start gap-2">
+                  <svg class="w-4 h-4 text-red-300 flex-shrink-0 mt-0.5" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24"><path d="M6 18L18 6M6 6l12 12"/></svg>
+                  <div>
+                    <p class="font-semibold text-ink-muted">Gris genérico, sin personalidad</p>
+                    <p class="text-[11px] text-ink-muted mt-0.5">Estética de bodega industrial</p>
+                  </div>
+                </div>
+              </td>
+            </tr>
+            <tr class="bg-sand">
+              <td class="py-4 px-5 text-ink-muted font-semibold text-[10px] uppercase tracking-widest">Materiales</td>
+              <td class="py-4 px-5">
+                <div class="flex items-start gap-2">
+                  <svg class="w-4 h-4 text-turq flex-shrink-0 mt-0.5" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24"><path d="M5 13l4 4L19 7"/></svg>
+                  <div>
+                    <p class="font-semibold text-ink">Silicona premium + acero</p>
+                    <p class="text-[11px] text-ink-muted mt-0.5">Resistentes, hipoalergénicos, duraderos</p>
+                  </div>
+                </div>
+              </td>
+              <td class="py-4 px-5">
+                <div class="flex items-start gap-2">
+                  <svg class="w-4 h-4 text-red-300 flex-shrink-0 mt-0.5" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24"><path d="M6 18L18 6M6 6l12 12"/></svg>
+                  <div>
+                    <p class="font-semibold text-ink-muted">Plástico básico / bajo costo</p>
+                    <p class="text-[11px] text-ink-muted mt-0.5">Se deterioran con el uso cotidiano</p>
+                  </div>
+                </div>
+              </td>
+            </tr>
+            <tr>
+              <td class="py-4 px-5 text-ink-muted font-semibold text-[10px] uppercase tracking-widest">Propuesta</td>
+              <td class="py-4 px-5">
+                <div class="flex items-start gap-2">
+                  <svg class="w-4 h-4 text-turq flex-shrink-0 mt-0.5" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24"><path d="M5 13l4 4L19 7"/></svg>
+                  <div>
+                    <p class="font-semibold text-ink">Pack completo desde $59.475</p>
+                    <p class="text-[11px] text-ink-muted mt-0.5">Ahorro de hasta 15% vs compra individual</p>
+                  </div>
+                </div>
+              </td>
+              <td class="py-4 px-5">
+                <div class="flex items-start gap-2">
+                  <svg class="w-4 h-4 text-red-300 flex-shrink-0 mt-0.5" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24"><path d="M6 18L18 6M6 6l12 12"/></svg>
+                  <div>
+                    <p class="font-semibold text-ink-muted">Venta por pieza suelta</p>
+                    <p class="text-[11px] text-ink-muted mt-0.5">Terminás pagando más por menos</p>
+                  </div>
+                </div>
+              </td>
+            </tr>
+            <tr class="bg-sand">
+              <td class="py-4 px-5 text-ink-muted font-semibold text-[10px] uppercase tracking-widest">Clases</td>
+              <td class="py-4 px-5">
+                <div class="flex items-start gap-2">
+                  <svg class="w-4 h-4 text-turq flex-shrink-0 mt-0.5" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24"><path d="M5 13l4 4L19 7"/></svg>
+                  <div>
+                    <p class="font-semibold text-ink">Mindset Sessions online GRATIS</p>
+                    <p class="text-[11px] text-ink-muted mt-0.5">+500 clases grabadas con Malú Pérez</p>
+                  </div>
+                </div>
+              </td>
+              <td class="py-4 px-5">
+                <div class="flex items-start gap-2">
+                  <svg class="w-4 h-4 text-red-300 flex-shrink-0 mt-0.5" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24"><path d="M6 18L18 6M6 6l12 12"/></svg>
+                  <div>
+                    <p class="font-semibold text-ink-muted">Solo el producto — nada más</p>
+                    <p class="text-[11px] text-ink-muted mt-0.5">Sin guía, sin comunidad, sin contenido</p>
+                  </div>
+                </div>
+              </td>
+            </tr>
+            <tr>
+              <td class="py-4 px-5 text-ink-muted font-semibold text-[10px] uppercase tracking-widest">Garantía</td>
+              <td class="py-4 px-5">
+                <div class="flex items-start gap-2">
+                  <svg class="w-4 h-4 text-turq flex-shrink-0 mt-0.5" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24"><path d="M5 13l4 4L19 7"/></svg>
+                  <div>
+                    <p class="font-semibold text-ink">30 días de prueba + 3 meses garantía</p>
+                    <p class="text-[11px] text-ink-muted mt-0.5">Si no lo usás, lo devolvés sin drama</p>
+                  </div>
+                </div>
+              </td>
+              <td class="py-4 px-5">
+                <div class="flex items-start gap-2">
+                  <svg class="w-4 h-4 text-red-300 flex-shrink-0 mt-0.5" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24"><path d="M6 18L18 6M6 6l12 12"/></svg>
+                  <div>
+                    <p class="font-semibold text-ink-muted">Sin respaldo real</p>
+                    <p class="text-[11px] text-ink-muted mt-0.5">Compras y rezas para que dure</p>
+                  </div>
+                </div>
+              </td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+  </section>
+
+
+  <!-- ===== 7 RAZONES ===== -->
+  <section id="razones" class="py-20 md:py-28 bg-sand">
+    <div class="max-w-5xl mx-auto px-6">
+      <div class="text-center mb-16">
+        <p class="reveal text-[10px] uppercase tracking-[0.4em] text-turq font-semibold mb-3">El Análisis</p>
+        <h2 class="reveal reveal-delay-1 font-display text-3xl md:text-4xl font-bold text-ink">
+          Las 7 Razones
+        </h2>
+      </div>
+
+      <!-- Razón #1: Ahorro -->
+      <article class="reveal mb-16 md:mb-20 bg-white rounded-2xl p-8 md:p-10 shadow-sm border border-gray-100">
+        <div class="flex items-start gap-6 md:gap-8">
+          <div class="reason-num flex-shrink-0 hidden sm:block">#1</div>
+          <div class="flex-1">
+            <span class="inline-block text-[10px] uppercase tracking-[0.35em] text-turq font-bold mb-2">Razón #1</span>
+            <h3 class="font-display text-xl md:text-2xl font-bold text-ink mb-1">Ahorro Real vs. Compra Individual</h3>
+            <p class="text-ink-muted text-sm italic mb-4">La matemática no miente.</p>
+            <p class="text-ink-light leading-relaxed text-[15px]">
+              En Decathlon o genéricos, cada implemento se vende por separado — y los precios se suman rápido. <strong class="text-ink">Un mat de yoga, unas pesas de muñeca y un aro de pilates comprados sueltos pueden costar el doble</strong> de lo que pagas por un pack Mindset completo.<br /><br />
+              Los packs agrupan todo lo que necesitas para entrenar desde día uno, con hasta <strong class="text-ink">15% de descuento incluido</strong>. No estás comprando implementos — estás comprando un sistema completo de entrenamiento a precio de piezas sueltas.
+            </p>
+          </div>
+        </div>
+      </article>
+
+      <!-- Razón #2: Simplicidad -->
+      <article class="reveal mb-16 md:mb-20 bg-white rounded-2xl p-8 md:p-10 shadow-sm border border-gray-100">
+        <div class="flex items-start gap-6 md:gap-8">
+          <div class="reason-num flex-shrink-0 hidden sm:block">#2</div>
+          <div class="flex-1">
+            <span class="inline-block text-[10px] uppercase tracking-[0.35em] text-turq font-bold mb-2">Razón #2</span>
+            <h3 class="font-display text-xl md:text-2xl font-bold text-ink mb-1">Tan Simple que Cualquiera Puede Empezar Hoy</h3>
+            <p class="text-ink-muted text-sm italic mb-4">Tres pasos. Sin excusas.</p>
+            <p class="text-ink-light leading-relaxed text-[15px]">
+              La principal objeción que escuchamos es: <em>"¿Lo usaré realmente?"</em> La respuesta está en la simplicidad del sistema:
+            </p>
+            <ol class="mt-4 space-y-3">
+              <li class="flex items-start gap-3">
+                <span class="flex-shrink-0 w-7 h-7 rounded-full bg-turq text-white text-xs font-bold flex items-center justify-center">1</span>
+                <p class="text-ink-light text-[15px] leading-relaxed"><strong class="text-ink">Elige tu pack</strong> — en menos de 5 minutos desde tu teléfono.</p>
+              </li>
+              <li class="flex items-start gap-3">
+                <span class="flex-shrink-0 w-7 h-7 rounded-full bg-turq text-white text-xs font-bold flex items-center justify-center">2</span>
+                <p class="text-ink-light text-[15px] leading-relaxed"><strong class="text-ink">Recíbelo en tu casa</strong> — con todo incluido, listo para usar desde la caja.</p>
+              </li>
+              <li class="flex items-start gap-3">
+                <span class="flex-shrink-0 w-7 h-7 rounded-full bg-turq text-white text-xs font-bold flex items-center justify-center">3</span>
+                <p class="text-ink-light text-[15px] leading-relaxed"><strong class="text-ink">Entra a Mindset Sessions</strong> — escoge una clase de 20 minutos y empieza sin moverte del living.</p>
+              </li>
+            </ol>
+            <p class="mt-4 text-ink-light text-[15px]">No necesitas experiencia previa. No necesitas horarios. <strong class="text-ink">Solo las ganas de moverte.</strong></p>
+          </div>
+        </div>
+      </article>
+
+      <!-- Razón #3: Versatilidad -->
+      <article class="reveal mb-16 md:mb-20 bg-white rounded-2xl p-8 md:p-10 shadow-sm border border-gray-100">
+        <div class="flex items-start gap-6 md:gap-8">
+          <div class="reason-num flex-shrink-0 hidden sm:block">#3</div>
+          <div class="flex-1">
+            <span class="inline-block text-[10px] uppercase tracking-[0.35em] text-turq font-bold mb-2">Razón #3</span>
+            <h3 class="font-display text-xl md:text-2xl font-bold text-ink mb-1">Un Pack, Mil Formas de Usarlo</h3>
+            <p class="text-ink-muted text-sm italic mb-4">Versatilidad total.</p>
+            <p class="text-ink-light leading-relaxed text-[15px] mb-5">
+              El error de los implementos genéricos es que están pensados para <em>el gimnasio</em>. Los packs Mindset están pensados para <strong class="text-ink">tu vida</strong>.
+            </p>
+            <div class="grid grid-cols-2 md:grid-cols-4 gap-3">
+              <div class="bg-sand rounded-xl p-4 text-center">
+                <div class="text-2xl mb-1">🏠</div>
+                <p class="text-xs font-semibold text-ink">En Casa</p>
+                <p class="text-[11px] text-ink-muted mt-0.5">Con clases online</p>
+              </div>
+              <div class="bg-sand rounded-xl p-4 text-center">
+                <div class="text-2xl mb-1">🚶‍♀️</div>
+                <p class="text-xs font-semibold text-ink">Caminando</p>
+                <p class="text-[11px] text-ink-muted mt-0.5">Pesas de muñeca</p>
+              </div>
+              <div class="bg-sand rounded-xl p-4 text-center">
+                <div class="text-2xl mb-1">🏖️</div>
+                <p class="text-xs font-semibold text-ink">De Vacaciones</p>
+                <p class="text-[11px] text-ink-muted mt-0.5">Estuche incluido</p>
+              </div>
+              <div class="bg-sand rounded-xl p-4 text-center">
+                <div class="text-2xl mb-1">🧘‍♀️</div>
+                <p class="text-xs font-semibold text-ink">En el Studio</p>
+                <p class="text-[11px] text-ink-muted mt-0.5">Pilates, Yoga, HIIT</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </article>
+
+      <!-- Razón #4: Durabilidad e Identidad -->
+      <article class="reveal mb-16 md:mb-20 bg-white rounded-2xl p-8 md:p-10 shadow-sm border border-gray-100">
+        <div class="flex items-start gap-6 md:gap-8">
+          <div class="reason-num flex-shrink-0 hidden sm:block">#4</div>
+          <div class="flex-1">
+            <span class="inline-block text-[10px] uppercase tracking-[0.35em] text-turq font-bold mb-2">Razón #4</span>
+            <h3 class="font-display text-xl md:text-2xl font-bold text-ink mb-1">Construido para Durar, Diseñado para Querer Mostrar</h3>
+            <p class="text-ink-muted text-sm italic mb-4">Calidad que se siente — y se ve.</p>
+            <p class="text-ink-light leading-relaxed text-[15px] mb-5">
+              Existe una diferencia abismal entre un implemento de plástico barato y uno de <strong class="text-ink">silicona premium con núcleo de acero</strong>. Los pesas de muñeca y tobillo Mindset no manchan, no se deforman y no huelen raro a los dos meses.<br /><br />
+              Pero además de durar — <strong class="text-ink">se ven increíbles</strong>. Inspirados en marcas internacionales como Bala y Vouri, los colores Mindset están pensados para que quieras usarlos y mostrarlos, no esconderlos.
+            </p>
+            <div class="flex flex-wrap gap-2 items-center">
+              <span class="text-[11px] text-ink-muted mr-1 font-semibold">Paleta:</span>
+              <span class="dot" style="background:#4ECDC4;" title="Turquesa"></span>
+              <span class="dot" style="background:#C4B5A0;" title="Cacao"></span>
+              <span class="dot" style="background:#B5BEC1;" title="Granito"></span>
+              <span class="dot" style="background:#C9B8D4;" title="Lavanda"></span>
+              <span class="dot" style="background:#43494A;" title="Noche"></span>
+              <span class="dot" style="background:#D4D8DA;" title="Bruma"></span>
+              <span class="dot" style="background:#F08080;" title="Salmón"></span>
+              <span class="dot" style="background:#C8DC74;" title="Lima"></span>
+              <span class="text-[11px] text-ink-muted ml-1">← Elige el tuyo</span>
+            </div>
+          </div>
+        </div>
+      </article>
+
+      <!-- Razón #5: Velocidad/Eficiencia -->
+      <article class="reveal mb-16 md:mb-20 bg-white rounded-2xl p-8 md:p-10 shadow-sm border border-gray-100">
+        <div class="flex items-start gap-6 md:gap-8">
+          <div class="reason-num flex-shrink-0 hidden sm:block">#5</div>
+          <div class="flex-1">
+            <span class="inline-block text-[10px] uppercase tracking-[0.35em] text-turq font-bold mb-2">Razón #5</span>
+            <h3 class="font-display text-xl md:text-2xl font-bold text-ink mb-1">Resultados Reales en Menos Tiempo del que Crees</h3>
+            <p class="text-ink-muted text-sm italic mb-4">La eficiencia también se entrena.</p>
+            <p class="text-ink-light leading-relaxed text-[15px]">
+              No necesitas 2 horas en el gym para notar la diferencia. Los implementos Mindset están diseñados para <strong class="text-ink">maximizar el trabajo muscular en sesiones cortas</strong>.<br /><br />
+              Las pesas de muñeca convierten una caminata cotidiana en entrenamiento de tonificación. El pack pilates te da una clase completa de 30-45 minutos con resultados reales — desde el living de tu casa, a la hora que quieras.<br /><br />
+              <strong class="text-ink">El deporte no debería competir con tu vida. Debería integrarse a ella.</strong>
+            </p>
+          </div>
+        </div>
+      </article>
+
+      <!-- Razón #6: Prueba Social -->
+      <article class="reveal mb-16 md:mb-20 bg-white rounded-2xl p-8 md:p-10 shadow-sm border border-gray-100">
+        <div class="flex items-start gap-6 md:gap-8">
+          <div class="reason-num flex-shrink-0 hidden sm:block">#6</div>
+          <div class="flex-1">
+            <span class="inline-block text-[10px] uppercase tracking-[0.35em] text-turq font-bold mb-2">Razón #6</span>
+            <h3 class="font-display text-xl md:text-2xl font-bold text-ink mb-1">Miles de Mujeres Ya Lo Eligieron — y Siguen Usándolo</h3>
+            <p class="text-ink-muted text-sm italic mb-4">La comunidad no miente.</p>
+            <p class="text-ink-light leading-relaxed text-[15px] mb-6">
+              No somos una marca nueva que promete y no cumple. Tenemos <strong class="text-ink">reseñas reales</strong> de clientas que usan sus packs semana a semana — y el respaldo de <strong class="text-ink">Malú Pérez</strong>, referente del fitness femenino en Chile con más de 500 clases grabadas.
+            </p>
+
+            <!-- Testimonios placeholder -->
+            <div class="grid grid-cols-1 sm:grid-cols-2 gap-4 mb-4">
+              <div class="bg-sand rounded-xl p-5 border border-gray-100">
+                <div class="flex gap-0.5 mb-2">
+                  <svg class="w-3.5 h-3.5 text-yellow-400" fill="currentColor" viewBox="0 0 20 20"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/></svg>
+                  <svg class="w-3.5 h-3.5 text-yellow-400" fill="currentColor" viewBox="0 0 20 20"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/></svg>
+                  <svg class="w-3.5 h-3.5 text-yellow-400" fill="currentColor" viewBox="0 0 20 20"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/></svg>
+                  <svg class="w-3.5 h-3.5 text-yellow-400" fill="currentColor" viewBox="0 0 20 20"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/></svg>
+                  <svg class="w-3.5 h-3.5 text-yellow-400" fill="currentColor" viewBox="0 0 20 20"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/></svg>
+                </div>
+                <!-- 📌 REEMPLAZAR con reseña real de cliente -->
+                <p class="text-ink-light text-[13px] leading-relaxed italic">"Lo uso en casa todos los días. El mat es increíble y los colores son preciosos. Vale totalmente la pena."</p>
+                <p class="text-ink-muted text-[11px] mt-2 font-semibold">— Camila R., Santiago</p>
+              </div>
+              <div class="bg-sand rounded-xl p-5 border border-gray-100">
+                <div class="flex gap-0.5 mb-2">
+                  <svg class="w-3.5 h-3.5 text-yellow-400" fill="currentColor" viewBox="0 0 20 20"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/></svg>
+                  <svg class="w-3.5 h-3.5 text-yellow-400" fill="currentColor" viewBox="0 0 20 20"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/></svg>
+                  <svg class="w-3.5 h-3.5 text-yellow-400" fill="currentColor" viewBox="0 0 20 20"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/></svg>
+                  <svg class="w-3.5 h-3.5 text-yellow-400" fill="currentColor" viewBox="0 0 20 20"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/></svg>
+                  <svg class="w-3.5 h-3.5 text-yellow-400" fill="currentColor" viewBox="0 0 20 20"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/></svg>
+                </div>
+                <!-- 📌 REEMPLAZAR con reseña real de cliente -->
+                <p class="text-ink-light text-[13px] leading-relaxed italic">"Empecé con las clases de Malú y el pack de pilates. Dos meses después y no paro. Nunca pensé que lo usaría tanto."</p>
+                <p class="text-ink-muted text-[11px] mt-2 font-semibold">— Valentina M., Providencia</p>
+              </div>
+            </div>
+
+            <!-- 📌 PLACEHOLDER para highlights de Instagram/UGC -->
+            <div class="bg-sand rounded-xl p-5 border border-dashed border-brand text-center">
+              <p class="text-[11px] text-ink-muted font-semibold uppercase tracking-widest">📸 Insertar aquí highlights de Instagram o UGC de clientas reales</p>
+            </div>
+          </div>
+        </div>
+      </article>
+
+      <!-- Razón #7: Garantía -->
+      <article class="reveal bg-turq/5 rounded-2xl p-8 md:p-10 border border-turq/20">
+        <div class="flex items-start gap-6 md:gap-8">
+          <div class="reason-num flex-shrink-0 hidden sm:block" style="color: rgba(91,181,176,0.2);">#7</div>
+          <div class="flex-1">
+            <span class="inline-block text-[10px] uppercase tracking-[0.35em] text-turq font-bold mb-2">Razón #7</span>
+            <h3 class="font-display text-xl md:text-2xl font-bold text-ink mb-1">Si No Te Encanta, No Pagas</h3>
+            <p class="text-ink-muted text-sm italic mb-4">La garantía que demuestra confianza real.</p>
+            <p class="text-ink-light leading-relaxed text-[15px] mb-6">
+              Entendemos que comprar online genera dudas. Por eso no pedimos fe ciega — te damos <strong class="text-ink">30 días completos para probar tu pack</strong>. Si por cualquier razón no estás contenta, lo devuelves y listo. Sin formularios, sin dramas.<br /><br />
+              <strong class="text-ink">Spoiler: en toda nuestra historia, nadie lo ha devuelto.</strong>
+            </p>
+            <div class="grid grid-cols-1 sm:grid-cols-3 gap-4">
+              <div class="bg-white rounded-xl p-4 text-center shadow-sm border border-turq/10">
+                <div class="w-12 h-12 rounded-full bg-turq/10 flex items-center justify-center mx-auto mb-3">
+                  <svg class="w-6 h-6 text-turq" fill="none" stroke="currentColor" stroke-width="1.5" viewBox="0 0 24 24"><path d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z" /></svg>
+                </div>
+                <p class="font-display font-bold text-ink text-sm">30 días</p>
+                <p class="text-[11px] text-ink-muted">de prueba</p>
+              </div>
+              <div class="bg-white rounded-xl p-4 text-center shadow-sm border border-turq/10">
+                <div class="w-12 h-12 rounded-full bg-turq/10 flex items-center justify-center mx-auto mb-3">
+                  <svg class="w-6 h-6 text-turq" fill="none" stroke="currentColor" stroke-width="1.5" viewBox="0 0 24 24"><path d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z" /></svg>
+                </div>
+                <p class="font-display font-bold text-ink text-sm">3 meses</p>
+                <p class="text-[11px] text-ink-muted">de garantía</p>
+              </div>
+              <div class="bg-white rounded-xl p-4 text-center shadow-sm border border-turq/10">
+                <div class="w-12 h-12 rounded-full bg-turq/10 flex items-center justify-center mx-auto mb-3">
+                  <svg class="w-6 h-6 text-turq" fill="none" stroke="currentColor" stroke-width="1.5" viewBox="0 0 24 24"><path d="M3 10h18M7 15h1m4 0h1m-7 4h12a3 3 0 003-3V8a3 3 0 00-3-3H6a3 3 0 00-3 3v8a3 3 0 003 3z" /></svg>
+                </div>
+                <p class="font-display font-bold text-ink text-sm">6 cuotas</p>
+                <p class="text-[11px] text-ink-muted">sin interés</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </article>
+    </div>
+  </section>
+
+
+  <!-- ===== PUENTE / VEREDICTO ===== -->
+  <section class="py-16 md:py-24 bg-ink text-white relative overflow-hidden">
+    <div class="absolute inset-0 opacity-5">
+      <div class="absolute top-1/3 -left-24 w-72 h-72 rounded-full border border-turq"></div>
+      <div class="absolute bottom-1/3 -right-24 w-56 h-56 rounded-full border border-turq"></div>
+    </div>
+    <div class="relative max-w-3xl mx-auto px-6 text-center">
+      <p class="reveal text-[10px] uppercase tracking-[0.4em] text-turq font-semibold mb-5">La Decisión Inteligente</p>
+      <h2 class="reveal reveal-delay-1 font-display text-2xl sm:text-3xl md:text-4xl font-bold leading-tight mb-6">
+        La forma más inteligente de <span class="text-turq">empezar a moverte</span> — sin excusas, sin horarios, sin complicaciones.
+      </h2>
+      <div class="reveal reveal-delay-2 w-16 h-0.5 bg-turq mx-auto mb-6"></div>
+      <p class="reveal reveal-delay-3 text-white/60 text-base md:text-lg leading-relaxed max-w-2xl mx-auto mb-8">
+        Ya tienes las razones. Ahora elige el pack que más se adapta a tu estilo de vida y da el primer paso.
+      </p>
+      <a href="#packs" class="reveal reveal-delay-4 inline-flex items-center gap-3 px-10 py-4 bg-turq text-white text-sm uppercase tracking-[0.2em] font-semibold rounded-full hover:bg-turq-dark transition-colors shadow-lg shadow-turq/20">
+        Ver los Packs
+        <svg class="w-4 h-4" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M17 8l4 4m0 0l-4 4m4-4H3"/></svg>
+      </a>
+    </div>
+  </section>
+
+
+  <!-- ===== PACKS / PRICING ===== -->
+  <section id="packs" class="py-20 md:py-28 bg-white">
+    <div class="max-w-6xl mx-auto px-6">
+      <div class="text-center mb-14">
+        <p class="reveal text-[10px] uppercase tracking-[0.4em] text-turq font-semibold mb-3">Tu Elección</p>
+        <h2 class="reveal reveal-delay-1 font-display text-2xl md:text-4xl font-bold text-ink mb-3">
+          Elige Tu Pack Mindset
+        </h2>
+        <p class="reveal reveal-delay-2 text-ink-muted text-[15px] font-light max-w-lg mx-auto">
+          Tres opciones según tu nivel y objetivo. Todas incluyen acceso a Mindset Sessions.
+        </p>
+      </div>
+
+      <div class="reveal grid grid-cols-1 md:grid-cols-3 gap-6 md:gap-6 items-start">
+
+        <!-- Pack 1: LIFESTYLE (Básico) -->
+        <div class="card-lift bg-sand rounded-2xl p-7 text-center border border-gray-200">
+          <p class="text-[10px] uppercase tracking-[0.35em] text-ink-muted font-semibold mb-1">Para Empezar</p>
+          <h3 class="font-display text-xl font-bold text-ink mb-0.5">Pack Lifestyle</h3>
+          <p class="text-[13px] text-ink-muted italic mb-4">Tu kit cotidiano de movimiento</p>
+
+          <!-- Imagen producto — 📌 REEMPLAZAR con imagen real -->
+          <div class="img-box aspect-square rounded-xl mb-5 max-w-[190px] mx-auto flex items-center justify-center">
+            <div class="text-center p-6">
+              <p class="text-[10px] text-ink-muted uppercase tracking-widest">📸 Imagen<br/>Pack Lifestyle</p>
+            </div>
+          </div>
+
+          <div class="flex items-center justify-center gap-2 mb-4">
+            <span class="text-save text-[11px] font-semibold line-through">$70.970</span>
+            <span class="text-2xl font-bold font-display text-ink">$59.475</span>
+            <span class="bg-save text-white text-[10px] font-bold px-2 py-0.5 rounded-full">16% OFF</span>
+          </div>
+
+          <ul class="text-[13px] text-ink-muted space-y-2.5 mb-6 text-left">
+            <li class="flex items-center gap-2">
+              <svg class="w-4 h-4 text-turq flex-shrink-0" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M5 13l4 4L19 7"/></svg>
+              Par pesas muñeca/tobillo 1kg + funda
+            </li>
+            <li class="flex items-center gap-2">
+              <svg class="w-4 h-4 text-turq flex-shrink-0" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M5 13l4 4L19 7"/></svg>
+              Botella térmica magnética 946ml
+            </li>
+            <li class="flex items-center gap-2">
+              <svg class="w-4 h-4 text-turq flex-shrink-0" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M5 13l4 4L19 7"/></svg>
+              Par de calcetines cortos
+            </li>
+            <li class="flex items-center gap-2">
+              <svg class="w-4 h-4 text-turq flex-shrink-0" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M5 13l4 4L19 7"/></svg>
+              Acceso Mindset Sessions gratis
+            </li>
+          </ul>
+          <div class="flex flex-wrap gap-1.5 justify-center mb-5">
+            <span class="dot" style="background:#43494A;" title="Noche"></span>
+            <span class="dot" style="background:#4ECDC4;" title="Turquesa"></span>
+          </div>
+          <a href="https://mindsetchile.com/collections/packs-deportivos-mindset/products/pack-lifestyle" target="_blank"
+             class="block w-full py-3 border-2 border-ink text-ink text-sm uppercase tracking-widest rounded-full font-semibold hover:bg-ink hover:text-white transition-colors">
+            Comprar Pack Lifestyle
+          </a>
+        </div>
+
+        <!-- Pack 2: PILATES MALÚ (Popular) -->
+        <div class="card-lift bg-ink rounded-2xl p-7 text-center relative overflow-hidden md:-mt-3 shadow-2xl shadow-ink/15">
+          <div class="pulse-badge absolute top-4 right-4 bg-turq text-white text-[10px] uppercase tracking-widest px-3 py-1 rounded-full font-bold">
+            Popular
+          </div>
+          <p class="text-[10px] uppercase tracking-[0.35em] text-turq font-semibold mb-1">El Más Completo</p>
+          <h3 class="font-display text-xl font-bold text-white mb-0.5">Pack Pilates Malú</h3>
+          <p class="text-[13px] text-white/50 italic mb-4">Con el respaldo de Malú Pérez</p>
+
+          <!-- Imagen producto — 📌 REEMPLAZAR con imagen real -->
+          <div class="img-box aspect-square rounded-xl mb-5 max-w-[190px] mx-auto flex items-center justify-center" style="background: rgba(255,255,255,0.08);">
+            <div class="text-center p-6">
+              <p class="text-[10px] text-white/30 uppercase tracking-widest">📸 Imagen<br/>Pack Pilates Malú</p>
+            </div>
+          </div>
+
+          <div class="flex items-center justify-center gap-2 mb-4">
+            <span class="text-white/40 text-[11px] font-semibold line-through">$154.460</span>
+            <span class="text-2xl font-bold font-display text-white">$131.291</span>
+            <span class="bg-save text-white text-[10px] font-bold px-2 py-0.5 rounded-full">15% OFF</span>
+          </div>
+
+          <ul class="text-[13px] text-white/60 space-y-2.5 mb-6 text-left">
+            <li class="flex items-center gap-2">
+              <svg class="w-4 h-4 text-turq flex-shrink-0" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M5 13l4 4L19 7"/></svg>
+              Mat de yoga negro premium
+            </li>
+            <li class="flex items-center gap-2">
+              <svg class="w-4 h-4 text-turq flex-shrink-0" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M5 13l4 4L19 7"/></svg>
+              Par pesas muñeca/tobillo 1kg
+            </li>
+            <li class="flex items-center gap-2">
+              <svg class="w-4 h-4 text-turq flex-shrink-0" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M5 13l4 4L19 7"/></svg>
+              Mancuernas silicona 2kg el par
+            </li>
+            <li class="flex items-center gap-2">
+              <svg class="w-4 h-4 text-turq flex-shrink-0" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M5 13l4 4L19 7"/></svg>
+              Aro de pilates 5lb (2.5kg)
+            </li>
+            <li class="flex items-center gap-2">
+              <svg class="w-4 h-4 text-turq flex-shrink-0" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M5 13l4 4L19 7"/></svg>
+              Estuches de transporte incluidos
+            </li>
+          </ul>
+          <div class="flex flex-wrap gap-1.5 justify-center mb-5">
+            <span class="dot" style="background:#B5BEC1;" title="Granito"></span>
+            <span class="dot" style="background:#C9B8D4;" title="Lavanda"></span>
+            <span class="dot" style="background:#43494A;" title="Noche"></span>
+          </div>
+          <a href="https://mindsetchile.com/collections/packs-deportivos-mindset/products/pack-pilates-malu" target="_blank"
+             class="block w-full py-3 bg-turq text-white text-sm uppercase tracking-widest rounded-full font-bold hover:bg-turq-dark transition-colors">
+            Comprar Pack Pilates Malú
+          </a>
+        </div>
+
+        <!-- Pack 3: FULL PILATES (Mejor valor) -->
+        <div class="card-lift bg-sand rounded-2xl p-7 text-center border border-gray-200">
+          <p class="text-[10px] uppercase tracking-[0.35em] text-ink-muted font-semibold mb-1">Mejor Valor</p>
+          <h3 class="font-display text-xl font-bold text-ink mb-0.5">Pack Full Pilates</h3>
+          <p class="text-[13px] text-ink-muted italic mb-4">Todo lo que necesitas, punto.</p>
+
+          <!-- Imagen producto — 📌 REEMPLAZAR con imagen real -->
+          <div class="img-box aspect-square rounded-xl mb-5 max-w-[190px] mx-auto flex items-center justify-center">
+            <div class="text-center p-6">
+              <p class="text-[10px] text-ink-muted uppercase tracking-widest">📸 Imagen<br/>Pack Full Pilates</p>
+            </div>
+          </div>
+
+          <div class="flex items-center justify-center gap-2 mb-4">
+            <span class="text-save text-[11px] font-semibold line-through">$159.460</span>
+            <span class="text-2xl font-bold font-display text-ink">$135.541</span>
+            <span class="bg-save text-white text-[10px] font-bold px-2 py-0.5 rounded-full">15% OFF</span>
+          </div>
+
+          <ul class="text-[13px] text-ink-muted space-y-2.5 mb-6 text-left">
+            <li class="flex items-center gap-2">
+              <svg class="w-4 h-4 text-turq flex-shrink-0" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M5 13l4 4L19 7"/></svg>
+              Mat de yoga verde claro premium
+            </li>
+            <li class="flex items-center gap-2">
+              <svg class="w-4 h-4 text-turq flex-shrink-0" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M5 13l4 4L19 7"/></svg>
+              Par pesas muñeca/tobillo 2kg
+            </li>
+            <li class="flex items-center gap-2">
+              <svg class="w-4 h-4 text-turq flex-shrink-0" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M5 13l4 4L19 7"/></svg>
+              Mancuernas silicona 2kg el par
+            </li>
+            <li class="flex items-center gap-2">
+              <svg class="w-4 h-4 text-turq flex-shrink-0" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M5 13l4 4L19 7"/></svg>
+              Aro de pilates 5lb (2.5kg)
+            </li>
+            <li class="flex items-center gap-2">
+              <svg class="w-4 h-4 text-turq flex-shrink-0" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M5 13l4 4L19 7"/></svg>
+              Estuches de transporte incluidos
+            </li>
+          </ul>
+          <div class="flex flex-wrap gap-1.5 justify-center mb-5">
+            <span class="dot" style="background:#43494A;" title="Noche"></span>
+            <span class="dot" style="background:#C4B5A0;" title="Cacao"></span>
+            <span class="dot" style="background:#4ECDC4;" title="Turquesa"></span>
+            <span class="dot" style="background:#D4D8DA;" title="Bruma"></span>
+            <span class="dot" style="background:#C8DC74;" title="Lima"></span>
+          </div>
+          <a href="https://mindsetchile.com/collections/packs-deportivos-mindset/products/pack-full-pilates" target="_blank"
+             class="block w-full py-3 border-2 border-ink text-ink text-sm uppercase tracking-widest rounded-full font-semibold hover:bg-ink hover:text-white transition-colors">
+            Comprar Pack Full Pilates
+          </a>
+        </div>
+
+      </div>
+
+      <!-- Ofertas adicionales -->
+      <div class="reveal mt-8 grid grid-cols-1 sm:grid-cols-3 gap-3 text-center text-[12px] text-ink-muted">
+        <div class="bg-sand rounded-xl px-4 py-3 border border-gray-100">
+          🏷️ <strong class="text-ink">10% OFF</strong> en tu primera compra dejando tu email
+        </div>
+        <div class="bg-sand rounded-xl px-4 py-3 border border-gray-100">
+          🚚 <strong class="text-ink">Envío gratis RM</strong> en compras sobre $54.490
+        </div>
+        <div class="bg-sand rounded-xl px-4 py-3 border border-gray-100">
+          🏦 <strong class="text-ink">20% OFF</strong> pagando con Santander o BCI
+        </div>
+      </div>
+    </div>
+  </section>
+
+
+  <!-- ===== GARANTÍA FINAL ===== -->
+  <section class="py-14 md:py-20 bg-sand border-t border-gray-100">
+    <div class="max-w-xl mx-auto px-6 text-center">
+      <div class="reveal flourish text-ink-muted mb-8">
+        <svg class="w-5 h-5 text-turq flex-shrink-0" fill="none" stroke="currentColor" stroke-width="1.5" viewBox="0 0 24 24">
+          <path d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z" />
+        </svg>
+      </div>
+      <blockquote class="reveal font-display text-xl md:text-2xl font-bold text-ink leading-snug mb-6">
+        "30 días para probarlo. Si no lo usas, lo devuelves — sin drama."
+      </blockquote>
+      <p class="reveal reveal-delay-1 text-ink-muted text-[14px] font-light mb-8">Garantía de 3 meses desde la recepción. Pago en hasta 6 cuotas sin interés.</p>
+      <a href="#packs"
+         class="reveal reveal-delay-2 inline-flex items-center gap-3 px-12 py-4 bg-ink text-white text-sm uppercase tracking-[0.2em] font-semibold rounded-full hover:bg-ink-light transition-all shadow-xl shadow-ink/10">
+        Elegir Mi Pack
+        <svg class="w-4 h-4" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M17 8l4 4m0 0l-4 4m4-4H3"/></svg>
+      </a>
+    </div>
+  </section>
+
+
+  <!-- ===== STICKY CTA MOBILE ===== -->
+  <div id="sticky-cta" class="sticky-cta fixed bottom-0 left-0 right-0 z-40 bg-white/95 backdrop-blur-md border-t border-gray-100 py-3 px-5 md:hidden">
+    <a href="#packs" class="flex items-center justify-center gap-2 w-full py-3.5 bg-ink text-white text-sm uppercase tracking-[0.2em] font-semibold rounded-full shadow-lg">
+      Ver los Packs
+      <svg class="w-4 h-4" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M17 8l4 4m0 0l-4 4m4-4H3"/></svg>
+    </a>
+  </div>
+
+
+  <!-- ===== FOOTER LEGAL ===== -->
+  <footer class="bg-white border-t border-gray-100 py-7">
+    <div class="max-w-4xl mx-auto px-6 text-center">
+      <a href="#" class="inline-block font-display text-lg font-bold tracking-[0.12em] text-ink uppercase mb-4">
+        mind<span class="text-turq">set</span>
+      </a>
+      <div class="flex flex-wrap items-center justify-center gap-4 md:gap-6 text-[11px] text-ink-muted">
+        <a href="https://mindsetchile.com/policies/terms-of-service" class="hover:text-ink transition-colors" target="_blank">Términos y Condiciones</a>
+        <span class="text-gray-200">|</span>
+        <a href="https://mindsetchile.com/policies/privacy-policy" class="hover:text-ink transition-colors" target="_blank">Política de Privacidad</a>
+        <span class="text-gray-200">|</span>
+        <a href="https://mindsetchile.com/policies/refund-policy" class="hover:text-ink transition-colors" target="_blank">Política de Devoluciones</a>
+      </div>
+      <p class="text-[11px] text-ink-muted mt-4">
+        &copy; 2025 Mindset Chile. Todos los derechos reservados. Envíos a todo Chile.
+      </p>
+    </div>
+  </footer>
+
+
+  <!-- ===== JAVASCRIPT ===== -->
+  <script>
+    // Scroll reveal
+    const revealEls = document.querySelectorAll('.reveal');
+    const obs = new IntersectionObserver((entries) => {
+      entries.forEach(e => {
+        if (e.isIntersecting) {
+          e.target.classList.add('visible');
+          obs.unobserve(e.target);
+        }
+      });
+    }, { threshold: 0.12, rootMargin: '0px 0px -40px 0px' });
+    revealEls.forEach(el => obs.observe(el));
+
+    // Sticky CTA
+    const stickyCta = document.getElementById('sticky-cta');
+    window.addEventListener('scroll', () => {
+      if (window.scrollY > window.innerHeight * 0.75) {
+        stickyCta.classList.add('show');
+      } else {
+        stickyCta.classList.remove('show');
+      }
+    }, { passive: true });
+  </script>
+</body>
+</html>
