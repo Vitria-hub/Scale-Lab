@@ -3,8 +3,74 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Scale Lab — ¿Gastas en anuncios y no conviertes?</title>
-  <meta name="description" content="Somos el equipo de growth que le faltaba a tu negocio. Meta Ads, Google Ads, CRO y landings que convierten. Evaluación gratuita sin compromiso." />
+  <title>Scale Lab | Agencia de Growth Digital para Ecommerce y Negocios en Chile</title>
+  <meta name="description" content="Gastas en anuncios y no conviertes? En Scale Lab armamos el embudo completo: Meta Ads, Google Ads, landings CRO y estrategia por etapa de consciencia. Evaluación gratuita sin compromiso." />
+  <meta name="keywords" content="agencia marketing digital chile, meta ads chile, google ads chile, ecommerce chile, landing page chile, CRO, growth marketing, publicidad digital, facebook ads chile, shopify chile" />
+  <meta name="robots" content="index, follow" />
+  <link rel="canonical" href="https://scale-lab-landing-josemaria-6481s-projects.vercel.app/" />
+
+  <!-- Open Graph / Facebook -->
+  <meta property="og:type" content="website" />
+  <meta property="og:url" content="https://scale-lab-landing-josemaria-6481s-projects.vercel.app/" />
+  <meta property="og:site_name" content="Scale Lab" />
+  <meta property="og:locale" content="es_CL" />
+  <meta property="og:title" content="Scale Lab — ¿Gastas en anuncios y no conviertes?" />
+  <meta property="og:description" content="Somos el equipo de growth que le faltaba a tu negocio. Meta Ads, Google Ads, CRO y landings que convierten. Evaluación gratuita sin compromiso." />
+  <meta property="og:image" content="https://scale-lab-landing-josemaria-6481s-projects.vercel.app/logo-scalelab.png" />
+  <meta property="og:image:width" content="1200" />
+  <meta property="og:image:height" content="630" />
+
+  <!-- Twitter Card -->
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="Scale Lab — ¿Gastas en anuncios y no conviertes?" />
+  <meta name="twitter:description" content="Somos el equipo de growth que le faltaba a tu negocio. Meta Ads, Google Ads, CRO y landings que convierten. Evaluación gratuita sin compromiso." />
+  <meta name="twitter:image" content="https://scale-lab-landing-josemaria-6481s-projects.vercel.app/logo-scalelab.png" />
+
+  <!-- Schema.org Organization -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "ProfessionalService",
+    "name": "Scale Lab",
+    "description": "Agencia de growth digital especializada en Meta Ads, Google Ads, CRO y landing pages para ecommerce y negocios en Chile.",
+    "url": "https://www.scalelab.cl",
+    "logo": "https://scale-lab-landing-josemaria-6481s-projects.vercel.app/logo-scalelab.png",
+    "email": "contacto@scalelab.cl",
+    "telephone": "+56932477469",
+    "address": {
+      "@type": "PostalAddress",
+      "addressCountry": "CL",
+      "addressLocality": "Santiago"
+    },
+    "areaServed": "CL",
+    "priceRange": "$$",
+    "serviceType": ["Meta Ads", "Google Ads", "CRO", "Landing Pages", "Email Marketing", "Growth Marketing"]
+  }
+  </script>
+
+  <!-- ===== META PIXEL ===== -->
+  <!-- Reemplaza TU_PIXEL_ID con tu ID real desde Meta Business → Events Manager -->
+  <script>
+  !function(f,b,e,v,n,t,s){if(f.fbq)return;n=f.fbq=function(){n.callMethod?
+  n.callMethod.apply(n,arguments):n.queue.push(arguments)};if(!f._fbq)f._fbq=n;
+  n.push=n;n.loaded=!0;n.version='2.0';n.queue=[];t=b.createElement(e);t.async=!0;
+  t.src=v;s=b.getElementsByTagName(e)[0];s.parentNode.insertBefore(t,s)}(window,
+  document,'script','https://connect.facebook.net/en_US/fbevents.js');
+  fbq('init', 'TU_PIXEL_ID');
+  fbq('track', 'PageView');
+  </script>
+  <noscript><img height="1" width="1" style="display:none"
+  src="https://www.facebook.com/tr?id=TU_PIXEL_ID&ev=PageView&noscript=1" /></noscript>
+
+  <!-- ===== GOOGLE ADS / GA4 ===== -->
+  <!-- Reemplaza TU_GTAG_ID con tu ID: G-XXXXXXXX (GA4) o AW-XXXXXXXXX (Google Ads) -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=TU_GTAG_ID"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+    gtag('config', 'TU_GTAG_ID');
+  </script>
   <script src="https://cdn.tailwindcss.com"></script>
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap" rel="stylesheet" />
   <script>
@@ -52,7 +118,7 @@
 
       <!-- Logo -->
       <div class="mb-10">
-        <img src="logo-scalelab.png" alt="Scale Lab" class="h-10 w-auto" />
+        <img src="logo-scalelab.png" alt="Scale Lab" class="h-16 w-auto" />
       </div>
 
       <div class="flex flex-col lg:flex-row gap-10 lg:gap-16 items-start">
@@ -609,7 +675,7 @@
   <footer style="background:#3b3f48" class="py-10">
     <div class="max-w-5xl mx-auto px-5">
       <div class="flex flex-col md:flex-row items-center justify-between gap-4 text-center md:text-left">
-        <img src="logo-scalelab.png" alt="Scale Lab" class="h-8 w-auto" />
+        <img src="logo-scalelab.png" alt="Scale Lab" class="h-10 w-auto" />
         <p class="text-sm text-gray-400">contacto@scalelab.cl</p>
         <p class="text-xs text-gray-500">© 2025 Scale Lab · Todos los derechos reservados</p>
       </div>
@@ -638,6 +704,9 @@
         if (data.success === 'true' || data.success === true) {
           formEl.style.display = 'none';
           successEl.classList.add('show');
+          // Dispara evento Lead en Meta Pixel y Google Ads al convertir
+          if (typeof fbq !== 'undefined') fbq('track', 'Lead');
+          if (typeof gtag !== 'undefined') gtag('event', 'conversion', { 'send_to': 'TU_GTAG_ID' });
         } else {
           btn.disabled = false;
           btn.textContent = 'Quiero mi evaluación gratuita →';
