@@ -618,8 +618,8 @@
 
   <!-- ===== FORM LOGIC ===== -->
   <script>
-    // Formspree endpoint — reemplaza YOUR_FORM_ID con tu ID real de formspree.io
-    const FORMSPREE_ENDPOINT = 'https://formspree.io/f/YOUR_FORM_ID';
+    // Formsubmit.co — envía directo a contacto@scalelab.cl, sin cuenta ni configuración
+    const FORM_ENDPOINT = 'https://formsubmit.co/ajax/contacto@scalelab.cl';
 
     async function handleSubmit(formEl, successEl) {
       const btn = formEl.querySelector('button[type="submit"]');
@@ -627,13 +627,15 @@
       btn.textContent = 'Enviando...';
 
       try {
-        const res = await fetch(FORMSPREE_ENDPOINT, {
+        const res = await fetch(FORM_ENDPOINT, {
           method: 'POST',
           body: new FormData(formEl),
           headers: { 'Accept': 'application/json' }
         });
 
-        if (res.ok) {
+        const data = await res.json();
+
+        if (data.success === 'true' || data.success === true) {
           formEl.style.display = 'none';
           successEl.classList.add('show');
         } else {
