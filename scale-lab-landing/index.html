@@ -114,18 +114,18 @@
   </a>
 
   <!-- ===== HERO ===== -->
-  <section class="min-h-screen flex items-center" style="background:#3b3f48">
+  <section id="hero" class="min-h-screen flex items-center" style="background:#3b3f48">
     <div class="w-full max-w-6xl mx-auto px-5 py-16 md:py-24">
 
       <!-- Logo -->
-      <div class="mb-10">
+      <div id="gsap-logo" class="mb-10">
         <img src="logo-scalelab.png" alt="Scale Lab" class="h-16 w-auto" />
       </div>
 
       <div class="flex flex-col lg:flex-row gap-10 lg:gap-16 items-start">
 
         <!-- Left copy -->
-        <div class="flex-1">
+        <div id="hero-copy" class="flex-1">
           <p class="text-xs font-bold uppercase tracking-widest mb-4" style="color:#e6c46a">
             Para dueños de ecommerce y negocios que quieren más clientes
           </p>
@@ -175,7 +175,7 @@
         </div>
 
         <!-- Right: Form card -->
-        <div class="w-full lg:w-[380px] flex-shrink-0">
+        <div id="hero-form-wrap" class="w-full lg:w-[380px] flex-shrink-0">
           <div class="bg-white p-6 shadow-2xl">
             <p class="text-xs font-black uppercase tracking-widest text-center text-gray-400 mb-1">Evaluación gratuita</p>
             <p class="text-xs text-center text-gray-400 mb-5">Te analizamos el negocio sin costo ni compromiso</p>
@@ -238,7 +238,7 @@
   </section>
 
   <!-- ===== PAIN ===== -->
-  <section class="py-16 md:py-20 bg-white">
+  <section id="section-pain" class="py-16 md:py-20 bg-white">
     <div class="max-w-5xl mx-auto px-5">
       <p class="text-xs font-bold uppercase tracking-widest text-center mb-3" style="color:#e6c46a">El problema tiene nombre</p>
       <h2 class="text-3xl md:text-4xl font-black text-center text-ink mb-2 leading-tight">
@@ -293,7 +293,7 @@
   </section>
 
   <!-- ===== BRIDGE / DIAGNOSIS ===== -->
-  <section class="py-16 md:py-20" style="background:#3b3f48">
+  <section id="section-bridge" class="py-16 md:py-20" style="background:#3b3f48">
     <div class="max-w-4xl mx-auto px-5 text-center">
       <p class="text-xs font-bold uppercase tracking-widest mb-3" style="color:#e6c46a">La raíz del problema</p>
       <h2 class="text-3xl md:text-4xl font-black text-white mb-6 leading-tight">
@@ -308,7 +308,7 @@
       </p>
 
       <!-- Awareness stages -->
-      <div class="flex flex-col md:flex-row rounded-none overflow-hidden mb-10 max-w-3xl mx-auto border border-white/10">
+      <div id="gsap-stages" class="flex flex-col md:flex-row rounded-none overflow-hidden mb-10 max-w-3xl mx-auto border border-white/10">
         <div class="flex-1 py-4 px-2 text-center" style="background:#242830">
           <div class="text-2xl mb-1">😶</div>
           <p class="text-xs text-gray-500 font-semibold">No sabe que tiene un problema</p>
@@ -335,7 +335,7 @@
   </section>
 
   <!-- ===== SERVICES ===== -->
-  <section class="py-16 md:py-20 bg-white">
+  <section id="section-services" class="py-16 md:py-20 bg-white">
     <div class="max-w-5xl mx-auto px-5">
       <p class="text-xs font-bold uppercase tracking-widest text-center mb-3" style="color:#e6c46a">Lo que hacemos</p>
       <h2 class="text-3xl md:text-4xl font-black text-center text-ink mb-12 leading-tight">
@@ -430,7 +430,7 @@
   </section>
 
   <!-- ===== TESTIMONIAL ===== -->
-  <section class="py-16 md:py-20" style="background:#f5f4f0">
+  <section id="section-testimonial" class="py-16 md:py-20" style="background:#f5f4f0">
     <div class="max-w-3xl mx-auto px-5 text-center">
       <p class="text-xs font-bold uppercase tracking-widest mb-3" style="color:#e6c46a">Clientes reales</p>
       <h2 class="text-3xl md:text-4xl font-black text-ink mb-10">Lo que dicen quienes ya escalaron</h2>
@@ -454,7 +454,7 @@
   </section>
 
   <!-- ===== PLANS ===== -->
-  <section class="py-16 md:py-20 bg-white">
+  <section id="section-plans" class="py-16 md:py-20 bg-white">
     <div class="max-w-5xl mx-auto px-5">
       <p class="text-xs font-bold uppercase tracking-widest text-center mb-3" style="color:#e6c46a">Inversión</p>
       <h2 class="text-3xl md:text-4xl font-black text-center text-ink mb-3 leading-tight">
@@ -546,7 +546,7 @@
   </section>
 
   <!-- ===== WHY US ===== -->
-  <section class="py-16 md:py-20" style="background:#3b3f48">
+  <section id="section-whyus" class="py-16 md:py-20" style="background:#3b3f48">
     <div class="max-w-4xl mx-auto px-5">
       <p class="text-xs font-bold uppercase tracking-widest text-center mb-3" style="color:#e6c46a">Por qué Scale Lab</p>
       <h2 class="text-3xl md:text-4xl font-black text-center text-white mb-4 leading-tight">
@@ -679,6 +679,78 @@
       </div>
     </div>
   </section>
+
+  <!-- ===== GSAP ===== -->
+  <script src="https://cdn.jsdelivr.net/npm/gsap@3.12.5/dist/gsap.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/gsap@3.12.5/dist/ScrollTrigger.min.js"></script>
+  <script>
+    gsap.registerPlugin(ScrollTrigger);
+
+    const isDesktop = window.innerWidth >= 1024;
+
+    // ── Hero: timeline al cargar la página ────────────────────
+    gsap.timeline({ defaults: { ease: 'power3.out' } })
+      .from('#gsap-logo',                  { opacity: 0, y: -20, duration: 0.6 })
+      .from('#hero-copy > p:first-child',  { opacity: 0, x: -20, duration: 0.5 }, '-=0.2')
+      .from('#hero-copy h1',               { opacity: 0, y: 35,  duration: 0.7 }, '-=0.3')
+      .from('#hero-copy > p:nth-child(3)', { opacity: 0, y: 20,  duration: 0.6 }, '-=0.4')
+      .from('#hero-copy ul li',            { opacity: 0, x: -20, stagger: 0.1, duration: 0.5 }, '-=0.3')
+      .from('#hero-copy > div',            { opacity: 0, y: 20,  duration: 0.5 }, '-=0.2')
+      .from('#hero-form-wrap',             {
+        opacity: 0,
+        x: isDesktop ? 50 : 0,
+        y: isDesktop ? 0 : 30,
+        duration: 0.8
+      }, '-=0.9');
+
+    // ── Helpers de scroll ─────────────────────────────────────
+    function fadeIn(sel, vars) {
+      gsap.utils.toArray(sel).forEach(el =>
+        gsap.from(el, {
+          scrollTrigger: { trigger: el, start: 'top 85%', toggleActions: 'play none none none' },
+          opacity: 0, y: 35, duration: 0.65, ease: 'power3.out', ...vars
+        })
+      );
+    }
+
+    function fadeInGroup(wrap, children, vars) {
+      const el = document.querySelector(wrap);
+      if (!el) return;
+      gsap.from(el.querySelectorAll(children), {
+        scrollTrigger: { trigger: el, start: 'top 82%', toggleActions: 'play none none none' },
+        opacity: 0, y: 35, duration: 0.6, ease: 'power3.out', stagger: 0.1, ...vars
+      });
+    }
+
+    // ── Pain ──────────────────────────────────────────────────
+    fadeIn('#section-pain h2');
+    fadeInGroup('#section-pain .grid', '> div', { stagger: 0.08, y: 25 });
+
+    // ── Bridge ────────────────────────────────────────────────
+    fadeIn('#section-bridge h2');
+    fadeIn('#section-bridge .text-lg', { y: 20 });
+    fadeInGroup('#gsap-stages', '.flex-1', { stagger: 0.1, x: -15, y: 0 });
+
+    // ── Services ──────────────────────────────────────────────
+    fadeIn('#section-services h2');
+    fadeInGroup('#section-services .grid', '> div', { stagger: 0.15 });
+
+    // ── Testimonial ───────────────────────────────────────────
+    fadeIn('#section-testimonial h2');
+    fadeIn('#section-testimonial .bg-white', { y: 25 });
+
+    // ── Plans ─────────────────────────────────────────────────
+    fadeIn('#section-plans h2');
+    fadeInGroup('#section-plans .grid', '> div', { stagger: 0.12 });
+
+    // ── Why Us ────────────────────────────────────────────────
+    fadeIn('#section-whyus h2');
+    fadeInGroup('#section-whyus .grid', '> div', { stagger: 0.15, y: 25 });
+
+    // ── Contacto ──────────────────────────────────────────────
+    fadeIn('#contacto h2');
+    fadeIn('#contact-form', { y: 25 });
+  </script>
 
   <!-- ===== FORM LOGIC ===== -->
   <script>
